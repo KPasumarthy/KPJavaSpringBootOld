@@ -1,0 +1,17 @@
+##KPJavaSpringBootApplication
+https://start.spring.io/
+
+##You-Tube Tutorial
+https://www.youtube.com/watch?v=3-5e5cXfwrU
+https://www.youtube.com/watch?v=IucFDX3RO9U
+https://www.youtube.com/watch?v=3-5e5cXfwrU
+
+##HTTP : CRUD Operations - Command Prompt
+C:\>curl http://localhost:8080/user
+HTTP://GET : RETRIEVE : Sri Sita Rama Hanuman
+C:\>curl -X POST -H "Content-Type: application/json" -d "{\"user\":"Rama"}" http://localhost:8080/user/
+HTTP://POST : CREATE : {"user":Rama}
+C:\>curl -X PUT -H "Content-Type: application/json" -d "{\"user\":"Sita"}" http://localhost:8080/user/
+HTTP://PUT : UPDATE : {"user":Sita}
+C:\>curl -X DELETE -H "Content-Type: application/json" -d "{\"user\":"Ravana"}" http://localhost:8080/user/
+HTTP://DELETE : DELETE : {"user":Ravana}
