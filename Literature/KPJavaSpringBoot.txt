@@ -2,9 +2,11 @@
 https://start.spring.io/
 
 ##You-Tube Tutorial
+https://www.youtube.com/watch?v=UfOxcrxhC0s
 https://www.youtube.com/watch?v=3-5e5cXfwrU
 https://www.youtube.com/watch?v=IucFDX3RO9U
-https://www.youtube.com/watch?v=3-5e5cXfwrU
+https://stackoverflow.com/questions/42054829/display-list-of-values-on-jsp-using-spring
+
 
 ##HTTP : CRUD Operations - Command Prompt
 C:\>curl http://localhost:8080/user

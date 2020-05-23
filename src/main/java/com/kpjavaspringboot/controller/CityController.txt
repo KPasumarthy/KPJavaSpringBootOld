@@ -1,0 +1,140 @@
+package com.kpjavaspringboot.controller;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.*;
+import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.kpjavaspringboot.model.City;
+import com.kpjavaspringboot.repository.CityRepository;
+
+
+//@RestController
+@Controller
+public class CityController {
+	
+	@Autowired
+	private CityRepository repo;
+		
+    @Autowired
+    public CityController(CityRepository repo) {
+    	super();
+		this.repo = repo;
+	}
+        
+    
+	//@GetMapping("/city")
+    //@RequestMapping("/city")
+	//public String retrieve() {
+	//	System.out.println("KP : KPJavaSpringBootApplication - @RestController : CityController - @GetMapping");
+	//	return "HTTP://GET : RETRIEVE : Sri Sita Rama Hanuman";		
+	//}
+    
+    
+	//@GetMapping("/city")
+    @RequestMapping("/city")
+	@ResponseBody
+	public String retrieve() {
+		System.out.println("KP : KPJavaSpringBootApplication - @RestController : CityController - @GetMapping");
+
+		//Get All Cities - City Repository
+		List<City> cities =  (ArrayList<City>) repo.findAll();
+
+	    // Print the name from the list.... : WORKING
+        for(City city : cities) {
+        	System.out.print(city.getId() + "\t");
+            System.out.print(city.getName() + "\t");
+            System.out.print(city.getCountryCode() + "\t");
+            System.out.print(city.getDisrtict() + "\t");
+            System.out.print(city.getPopulation() + "\n");            
+        }
+       	
+		//return "HTTP://GET : RETRIEVE : Sri Sita Rama Hanuman";		
+        //return "index";
+        return "response";
+        //return Arrays.deepToString(arrCities);
+	}
+    
+    
+    @RequestMapping(value = { "/employee" }, method = RequestMethod.GET)
+    public ModelAndView listEmployee() {
+    	System.out.println("KP : KPJavaSpringBootApplication - @Controller : CityController - @RequestMapping");
+        //LinkedList<String> list = getList();
+    	//Get All Cities - City Repository
+		List<City> list =  (ArrayList<City>) repo.findAll();
+        //ModelAndView map = new ModelAndView("index");
+		ModelAndView map = new ModelAndView("index");
+        map.addObject("lists", list);
+
+        return map;
+    }
+    
+
+	//@GetMapping("/cities")
+	@RequestMapping("/cities")
+	//@ResponseBody
+	public String retrieveAllCities() {
+	//public List<City> retrieveAllCities() {
+		System.out.println("KP : KPJavaSpringBootApplication - @RestController : CityController - @GetMapping  : retrieveAllCities()");
+
+		//Get All Cities - City Repository
+		List<City> cities =  (ArrayList<City>) repo.findAll();
+
+	    // Print the name from the list.... : WORKING
+        for(City city : cities) {
+        	System.out.print(city.getId() + "\t");
+            System.out.print(city.getName() + "\t");
+            System.out.print(city.getCountryCode() + "\t");
+            System.out.print(city.getDisrtict() + "\t");
+            System.out.print(city.getPopulation() + "\n");            
+        }
+		
+		//return service.listAll();
+        //return "HTTP://GET : RETRIEVE : Sri Sita Rama Hanuman : ";
+        //return cities;
+        //return "index";
+        return "response";
+        
+	}
+	
+	
+	@PostMapping("/city")
+	@ResponseBody
+	public String create(@RequestBody String city) {
+		System.out.println("KP : KPJavaSpringBootApplication - @RestController : CityController - @PostMapping : " + city);
+		//repo.saveAll(city);
+		return "HTTP://POST : CREATE : " + city;
+	}
+	
+	@PutMapping("/city")
+	public String update(@RequestBody String city) {	
+		System.out.println("KP : KPJavaSpringBootApplication - @RestController : CityController - @PutMapping : " + city);	
+		return "HTTP://PUT : UPDATE : " + city;
+	}	
+
+	@DeleteMapping("/city")
+	public String delete(@RequestBody String city) {
+		System.out.println("KP : KPJavaSpringBootApplication - @RestController : CityController - @DeleteMapping : " + city);
+		return "HTTP://DELETE : DELETE : " + city;
+	}		
+}

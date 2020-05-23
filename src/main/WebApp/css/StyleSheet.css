@@ -1,0 +1,108 @@
+
+/*KP : New Styles offered*/
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td, th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+
+tr:nth-child(even) {
+	background-color: #dddddd;
+}
+/*KP : New Styles offered*/
+
+
+footer {
+	background-color: #012169;
+	border-top: 0;
+	color: #fff;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+.footer-module-class-v-11-0-0 .footer-bottom-section {
+	background-color: #012169;
+	border-top: 0;
+	color: #fff;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+visibility: visible ;
+-webkit-font-smoothing: antialiased ;
+font-style: normal ;
+font-weight: normal ;
+line-height: 20px ;
+color: #222 ;
+cursor: auto ;
+font-family: Arial, "Helvetica Neue ", Helvetica, Roboto, sans-serif ;
+box-sizing: inherit ;
+margin: 0; padding: 0; display: block ;
+
+
+element.style {
+	
+}
+
+[data-sparta-container] div, [data-sparta-container] dl, [data-sparta-container] dt,
+	[data-sparta-container] dd, [data-sparta-container] ul, [data-sparta-container] ol,
+	[data-sparta-container] li, [data-sparta-container] h1, [data-sparta-container] h2,
+	[data-sparta-container] h3, [data-sparta-container] h4, [data-sparta-container] h5,
+	[data-sparta-container] h6, [data-sparta-container] pre, [data-sparta-container] form,
+	[data-sparta-container] p, [data-sparta-container] blockquote, [data-sparta-container] th,
+	[data-sparta-container] td {
+	margin: 0;
+	padding: 0;
+}
+
+[data-sparta-container] *, [data-sparta-container] *:before, [data-sparta-container] *:after
+	{
+	box-sizing: inherit;
+}
+
+user agent stylesheet
+div {
+	display: block;
+}
+
+[data-sparta-container] {
+	background: #fff;
+	color: #222;
+	cursor: auto;
+	font-family: Arial, "Helvetica Neue", Helvetica, Roboto, sans-serif;
+}
+
+[data-sparta-container] {
+	box-sizing: border-box;
+	font: normal normal normal .5 Arial, "Helvetica Neue", Helvetica, Roboto,
+		sans-serif;
+	color: #333;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background: #fff;
+	color: #222;
+	cursor: auto;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 20px;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+Style Attribute {
+	visibility: visible;
+}
+
+[data-sparta-wrapper] {
+	font-family: sans-serif;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	margin: 0;
+}
