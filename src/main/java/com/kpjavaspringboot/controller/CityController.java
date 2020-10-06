@@ -207,8 +207,7 @@ public class CityController {
         System.out.print(city.getName() + "\t");
         System.out.print(city.getCountryCode() + "\t");
         System.out.print(city.getDisrtict() + "\t");
-        System.out.print(city.getPopulation() + "\n");            
-       	             
+ 
         return cityOut;
 
 	}
