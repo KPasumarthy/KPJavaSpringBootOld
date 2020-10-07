@@ -24,6 +24,7 @@ public class KPJavaSpringBootApplication {
 		//session.getParameter("sRDeviceIP");
 		
 		//KP : Interview Questions & Answers
+		//KPJavaInterviewExamples.getInterviewQuestions();
 		KPJavaInterviewExamples objKPJavaIntvwExp = new KPJavaInterviewExamples();
 		objKPJavaIntvwExp.getInterviewQuestions();
 				
