@@ -34,8 +34,8 @@ import com.kpjavaspringboot.model.City;
 import com.kpjavaspringboot.repository.CityRepository;
 
 
-//@RestController
-@Controller
+@RestController
+//@Controller
 public class CityController {
 	
 	@Autowired
