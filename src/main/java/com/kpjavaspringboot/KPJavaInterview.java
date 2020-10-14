@@ -11,7 +11,9 @@ public class KPJavaInterview {
 		// KP : Debug Print
 		System.out.println("KP : KPJavaInterview -  com.kpjavaspringboot : main()");
 
-		/// ************************************Java 8 : Arrays - Duplicates & Smallest Integers Solution *****************************************///
+		/************************************
+		 * Java 8 : Arrays - Duplicates & Smallest Integers Solution
+		 *****************************************/
 
 		/***
 		 * 
@@ -32,11 +34,10 @@ public class KPJavaInterview {
 
 		/// KP : Input Array
 		// int[] A = { 1, 3, 6, 4, 1, 2, 2 };
-		 //int[] A = { 1, 2, 3 };
-		//int[] A = { -7, -11, -3 };
-		int[] A = { -7, -11, -3, 1, 3, 6, 4, 1, 2, 2, -100, 90, 98, 625 };
+		// int[] A = { 1, 2, 3 };
+		// int[] A = { -7, -11, -3 };
+		int[] A = { -7, -11, -3, 1, 3, 0, 0, 0, 9, 7, 8, 6, 4, 1, 2, 2, -100, 90, 98, 625 };
 
-		
 		/// KP : Get Duplicates Array
 		// int[] dup = getDuplicateInteger(A);
 		// System.out.println("KP : KPJavaInterview - com.kpjavaspringboot : Duplicate
@@ -61,25 +62,25 @@ public class KPJavaInterview {
 				// // your duplicate element
 				// System.out.printf("\t Duplicate Value of 'a' : %d \n", a);
 			} else {
-				//System.out.printf("\t Value of 'a' : %d, 'j' : %d \n", a, j);
+				// System.out.printf("\t Value of 'a' : %d, 'j' : %d \n", a, j);
 
 				if (a > 0) {
 
 					j++;
 				}
-				
+
 				System.out.printf("\t (1) Value of 'a' : %d, 'j' : %d \n", a, j);
-				
+
 				if (a > j) {
 
 					return j;
-				}
-				else {
-					if ( a == A[A.length-1]) {
-						System.out.printf("\t (2) Value of 'a' : %d, 'j' : %d \n", a, j++);
+				} else {
+					if (a == A[A.length - 1]) {
+						j++;
+						System.out.printf("\t (2) Value of 'a' : %d, 'j' : %d \n", a, j);
 						return j;
 					}
-				}				
+				}
 			}
 		}
 
@@ -122,7 +123,8 @@ public class KPJavaInterview {
 		return dupArr;
 	}
 
-	
-	/// ************************************Java 8 : Arrays - Duplicates & Smallest Integers Solution *****************************************///
-	
+	/************************************
+	 * Java 8 : Arrays - Duplicates & Smallest Integers Solution
+	 *****************************************/
+
 }

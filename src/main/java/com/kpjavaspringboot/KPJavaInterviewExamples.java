@@ -147,7 +147,8 @@ public class KPJavaInterviewExamples {
 				}
 				else {
 					if ( a == A[A.length-1]) {
-						//System.out.printf("\t (2) Value of 'a' : %d, 'j' : %d \n", a, j++);
+						j++;
+						//System.out.printf("\t (2) Value of 'a' : %d, 'j' : %d \n", a, j);
 						return j;
 					}
 				}				
