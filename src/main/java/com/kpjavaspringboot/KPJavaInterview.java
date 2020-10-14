@@ -10,6 +10,21 @@ public class KPJavaInterview {
 
 		// KP : Debug Print
 		System.out.println("KP : KPJavaInterview -  com.kpjavaspringboot : main()");
+		
+		//KP : Smallest Integer
+		//SmallestIntegerInterviewTest();
+		
+		//KP : Interview Test 
+		
+
+	}
+
+	
+	
+	/************************************
+	 * Java 8 : Arrays - Duplicates & Smallest Integers Solution
+	 *****************************************/
+	public static void SmallestIntegerInterviewTest() {
 
 		/************************************
 		 * Java 8 : Arrays - Duplicates & Smallest Integers Solution

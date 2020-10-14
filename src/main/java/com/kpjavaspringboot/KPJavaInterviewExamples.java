@@ -74,6 +74,26 @@ public class KPJavaInterviewExamples {
 
 				
 		//// KP : Q&A : 5 - Get Java 8 : Arrays - Duplicates & Smallest Integers Solution	
+		//KP : Smallest Integer -  	Write a function: that, given an array A of N integers, 
+		//							returns the smallest positive integer (greater than 0) that does not occur in A.
+		SmallestIntegerInterviewTest();
+		//// KP : Q&A : 5 - Get Java 8 : Arrays - Duplicates & Smallest Integers Solution
+		
+		
+		
+		/// ************************************ KP : Interview Questions : Q&A *****************************************///
+
+	}
+
+	
+	/// ************************************Java 8 : Arrays - Duplicates & Smallest Integers Solution *****************************************///
+
+	public static void SmallestIntegerInterviewTest() {
+
+		/************************************
+		 * Java 8 : Arrays - Duplicates & Smallest Integers Solution
+		 *****************************************/
+
 		/***
 		 * 
 		 * Write a function:
@@ -93,31 +113,20 @@ public class KPJavaInterviewExamples {
 
 		/// KP : Input Array
 		// int[] A = { 1, 3, 6, 4, 1, 2, 2 };
-		 //int[] A = { 1, 2, 3 };
-		//int[] A = { -7, -11, -3 };
-		int[] A = { -7, -11, -3, 1, 3, 6, 4, 1, 2, 2, -100, 90, 98, 625 };
+		// int[] A = { 1, 2, 3 };
+		// int[] A = { -7, -11, -3 };
+		int[] A = { -7, -11, -3, 1, 3, 0, 0, 0, 9, 7, 8, 6, 4, 1, 2, 2, -100, 90, 98, 625 };
 
-		
 		/// KP : Get Duplicates Array
-		int[] Dup = getDuplicateInteger(A);
-		System.out.printf("\t Input Array A[] : %s \n", Arrays.toString(A));
-		System.out.printf("\t Duplicate Sorted Array Dup[] : %s \n", Arrays.toString(Dup));
+		// int[] dup = getDuplicateInteger(A);
+		// System.out.println("KP : KPJavaInterview - com.kpjavaspringboot : Duplicate
+		/// Positive Integer : " + dup);
 
-
-		/// KP : Get Smallest Positive Integer Array
 		int val = getSmallestPositiveInteger(A);
-		System.out.printf("\t Input Array A[] : %s \n", Arrays.toString(A));
 		System.out.println("KP : KPJavaInterview -  com.kpjavaspringboot : Smallest Positive Integer : " + val);
-		//// KP : Q&A : 5 - Get Java 8 : Arrays - Duplicates & Smallest Integers Solution
-		
-		
-		
-		/// ************************************ KP : Interview Questions : Q&A *****************************************///
 
 	}
-
 	
-	/// ************************************Java 8 : Arrays - Duplicates & Smallest Integers Solution *****************************************///
 	public static int getSmallestPositiveInteger(int[] A) {
 	
 		//// KP : First Sort an Array
