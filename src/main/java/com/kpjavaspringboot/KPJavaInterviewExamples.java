@@ -82,8 +82,8 @@ public class KPJavaInterviewExamples {
 
 		///  KP :  Add Digits in an Integer Number : Q&A
 		//KP : Count Number of Digits and Return the Sum
-		numberOfDigits(987654321);
-		addDigits(987654321);
+		//System.out.println("KP : Count Number of Digits and Return the Sum?");
+		CountAndAddDigitsInANumber();
 		///  KP :  Add Digits in an Integer Number : Q&A
 
 	}
@@ -92,6 +92,29 @@ public class KPJavaInterviewExamples {
 	/*******************************************
 	 * Java 8 : Add Digits in an Integer Number
 	 *******************************************/
+	
+	public static void CountAndAddDigitsInANumber() {
+
+		/************************************
+		 * Java 8 : Count Number of Digits and Return the Sum : Modulus '%' Operator
+		 *****************************************/
+
+		/***
+		 * 
+		 * Write a function:
+		 * 	KP : Count Number of Digits and Return the Sum?
+		 * 
+		 ***/
+		
+		System.out.println("KP : Count Number of Digits and Return the Sum?");
+		int num = 987654321;
+		int count = numberOfDigits(num);
+		int sum = addDigits(num);
+		System.out.printf("\t Count & Sum of All Digitis inside the Number : '%d'. Count : '%d', Sum : '%d' \n", num, count, sum );
+		
+	}
+	
+	
 	
 	public static int numberOfDigits(int num) {
 		///KP : Count Number of Digits in an Number Operator - - Algorithm To Extract Individual Digits
@@ -116,7 +139,7 @@ public class KPJavaInterviewExamples {
     	    
     	    //Sum = sum + rem;
     	    sum += rem;
-    	    System.out.printf("KP : KPJavaInterview - addDigits() - num : '%d', sum : '%d',  Individual Digits 'rem' : '%d' \n", num, sum, rem);
+    	    //System.out.printf("KP : KPJavaInterview - addDigits() - num : '%d', sum : '%d',  Individual Digits 'rem' : '%d' \n", num, sum, rem);
     	    
     	    //num = num /10;
 	        num /= 10;	           	   
