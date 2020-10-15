@@ -79,12 +79,57 @@ public class KPJavaInterviewExamples {
 		SmallestIntegerInterviewTest();
 		//// KP : Q&A : 5 - Get Java 8 : Arrays - Duplicates & Smallest Integers Solution
 		
-		
-		
-		/// ************************************ KP : Interview Questions : Q&A *****************************************///
+
+		///  KP :  Add Digits in an Integer Number : Q&A
+		//KP : Count Number of Digits and Return the Sum
+		numberOfDigits(987654321);
+		addDigits(987654321);
+		///  KP :  Add Digits in an Integer Number : Q&A
 
 	}
 
+	
+	/*******************************************
+	 * Java 8 : Add Digits in an Integer Number
+	 *******************************************/
+	
+	public static int numberOfDigits(int num) {
+		///KP : Count Number of Digits in an Number Operator - - Algorithm To Extract Individual Digits
+	    int count = 0;
+	    //num = 3452;
+	
+	    while(num != 0)
+	    {
+	        // num = num/10
+	        num /= 10;
+	        ++count;
+	    }
+ 	    return count;
+	}
+		
+	public static int addDigits(int num) {
+	    
+		int rem, sum = 0;
+        while (num != 0) {
+           	           	
+    	    rem = num%10;   //KP : 'rem' is the Remainder after the 'num' Modulus Operation. 
+    	    
+    	    //Sum = sum + rem;
+    	    sum += rem;
+    	    System.out.printf("KP : KPJavaInterview - addDigits() - num : '%d', sum : '%d',  Individual Digits 'rem' : '%d' \n", num, sum, rem);
+    	    
+    	    //num = num /10;
+	        num /= 10;	           	   
+        }
+                
+	    return sum;
+	}
+	
+	/*******************************************
+	 * Java 8 : Add Digits in an Integer Number
+	 *******************************************/
+	
+	
 	
 	/// ************************************Java 8 : Arrays - Duplicates & Smallest Integers Solution *****************************************///
 
