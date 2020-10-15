@@ -11,14 +11,53 @@ public class KPJavaInterview {
 		// KP : Debug Print
 		System.out.println("KP : KPJavaInterview -  com.kpjavaspringboot : main()");
 		
-		//KP : Smallest Integer
-		//SmallestIntegerInterviewTest();
-		
-		//KP : Interview Test 
-		
+		// KP : SmallestIntegerInterviewTest
+		SmallestIntegerInterviewTest();
 
+		//KP : addDigits
+		addDigits(827359);
 	}
 
+	
+	/*******************************************
+	 * Java 8 : Add Digits in an Integer Number
+	 *******************************************/
+	
+	public static int numberOfDigits(int num) {
+		///KP : Count Number of Digits in an Number Operator - - Algorithm To Extract Individual Digits
+	    int count = 0;
+	    //num = 3452;
+	
+	    while(num != 0)
+	    {
+	        // num = num/10
+	        num /= 10;
+	        ++count;
+	    }
+ 	    return count;
+	}
+		
+	public static int addDigits(int num) {
+	    
+		int rem, sum = 0;
+        while (num != 0) {
+           	           	
+    	    rem = num%10;   //KP : 'rem' is the Remainder after the 'num' Modulus Operation. 
+    	    
+    	    //Sum = sum + rem;
+    	    sum += rem;
+    	    System.out.printf("KP : KPJavaInterview - addDigits() - num : '%d', sum : '%d',  Individual Digits 'rem' : '%d' \n", num, sum, rem);
+    	    
+    	    //num = num /10;
+	        num /= 10;	           	   
+        }
+                
+	    return sum;
+	}
+	
+	/*******************************************
+	 * Java 8 : Add Digits in an Integer Number
+	 *******************************************/
 	
 	
 	/************************************
@@ -142,4 +181,113 @@ public class KPJavaInterview {
 	 * Java 8 : Arrays - Duplicates & Smallest Integers Solution
 	 *****************************************/
 
+	
+	/***
+	 * 
+	 * 		//KP : Smallest Integer
+		//SmallestIntegerInterviewTest();
+		
+		//KP : Interview Test : https://app.codility.com/c/run/demoPXAFZU-G2Y/
+		//String S = "ab";
+		//int[] C = {1,3};
+		
+		//KP : Return : 2
+		String S = "abccbd";
+		int[] C = {0,1,2,3,4,5};
+		
+		////KP : Return : 3
+		//String S = "aabbcc";
+		//int[] C = {1,2,1,2,1,2};
+		
+		////KP : Return : 3+4+5 = 12
+		//String S = "aaaa";
+		//int[] C = {3,4,5,6};
+		
+		////KP : Return : 0
+		//String S = "ababa";
+		//int[] C = {10,5,10,5,10};
+				
+		//Input String S
+		String[] arrS = S.split("");
+		
+		// KP : Find Duplicate
+		Set<String> setIn = new HashSet<String>();
+		Set<Integer> set = new HashSet<Integer>();
+		Set<Integer> dup = new HashSet<Integer>();
+				
+		String f = "";
+		int i = 0;
+		int del = 0;
+		for (String s : arrS) {
+		
+			//KP : Init 
+			if (f == "") {
+				f = s;
+			}
+			
+			if ( f == s) {
+				del = i;
+			}
+			else {
+				f = "";
+			}
+			
+			//if (setIn.add(s) == false) {
+				// // your duplicate element
+			//	System.out.printf("\t Duplicate Value of 'a' : %d \n", a);
+			//	dup.add(a);
+			//}
+
+			System.out.printf("\t Value of 'i' : %d, 'del' : %d, 's' : %s, 'f' : %s \n", i, del, s, f);
+			i++;
+
+		}
+	 * 
+	 */
+	
+	
+	/*
+	 * 
+	 * 		
+	public static int addTwoDigits(int num) {
+	    
+		///KP : Mod Operator - Extract Individual Digits : Steps
+		//int u = num%10;
+		int u =  ( ( ( num - 0  ) / 1) %10 );	
+        int t =	 ( ( ( num - u  ) / 10) % 10 ) % 10;						
+	    int h =  ( ( ( num - t  ) / 100) % 100 ) % 10;	
+	    int th = ( ( ( num - h  ) / 1000) % 1000 ) % 10;					
+	    int tt = ( ( ( num - th ) / 10000) % 10000 ) % 10;		
+	    int m =  ( ( ( num - tt ) / 100000) % 100000 ) % 10;		
+	    
+		// KP : Debug Print
+		System.out.printf("KP : KPJavaInterview - addTwoDigits() - num : '%d', u : '%d, t : '%d', h : '%d', th : %d,  tt : %d, m : %d \n", num, u, t, h, th, tt, m);
+	 		
+		
+		///KP : Mod Operator - - Algorithm To Extract Individual Digits
+		int tmp =  ( ( ( num - 0  ) / 1) ) %10;
+        int count = 0;
+        int n = num;
+        int r = 0;
+
+        while (n != 0) {
+           	    
+        	
+	        //tmp = num;
+	        // num = num/10;
+    	    r = n%10;    	    
+    	    System.out.printf("KP : KPJavaInterview - addTwoDigits() - n : '%d', r : '%d', num : '%d', count : '%d',  Individual Digits 'tmp' : '%d' \n", n, r, num, count, tmp);
+    	    
+	        n /= 10;	           	   
+    	    ++count;
+        }
+        
+        
+		int sum = 0;
+	    return sum;
+	}
+	 * 
+	 * */
+	
+		
 }

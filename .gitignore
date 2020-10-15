@@ -29,3 +29,9 @@ build/
 
 ### VS Code ###
 .vscode/
+
+##KP : Ignore Files
+Literature/Capture-2.JPG
+Literature/TestInterviewCapture.JPG
+src/main/java/com/kpjavaspringboot/KPJavaInterview-XX.txt
+src/main/java/com/kpjavaspringboot/KPJavaInterview.java.txt
