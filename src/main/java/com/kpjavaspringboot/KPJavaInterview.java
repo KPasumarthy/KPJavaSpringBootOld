@@ -93,9 +93,14 @@ public class KPJavaInterview {
 		int[] A = { -7, -11, -3, 1, 3, 0, 0, 0, 9, 7, 8, 6, 4, 1, 2, 2, -100, 90, 98, 625 };
 
 		/// KP : Get Duplicates Array
-		// int[] dup = getDuplicateInteger(A);
-		// System.out.println("KP : KPJavaInterview - com.kpjavaspringboot : Duplicate
-		/// Positive Integer : " + dup);
+		int[] dup = getDuplicateInteger(A);
+		System.out.println("KP : KPJavaInterview - com.kpjavaspringboot : Duplicate Array : " + dup);
+		
+		
+		/// KP : Get Unique Non-Duplicates Array
+		int[] uniquNonDup = getUniqueNonDuplicateArray(A);
+		System.out.println("KP : KPJavaInterview - com.kpjavaspringboot : Unique Non-Duplicate Array : " + uniquNonDup);
+
 
 		int val = getSmallestPositiveInteger(A);
 		System.out.println("KP : KPJavaInterview -  com.kpjavaspringboot : Smallest Positive Integer : " + val);
@@ -152,17 +157,36 @@ public class KPJavaInterview {
 		// KP : Find Duplicate
 		Set<Integer> set = new HashSet<Integer>();
 		Set<Integer> dup = new HashSet<Integer>();
+		Set<Integer> noDup = new HashSet<Integer>();
 		for (int a : A) {
 			if (set.add(a) == false) {
 				// // your duplicate element
 				System.out.printf("\t Duplicate Value of 'a' : %d \n", a);
 				dup.add(a);
 			}
+			else {
+				System.out.printf("\t Unique : NOT A Duplicate Value of 'a' : %d \n", a);
+				noDup.add(a);
+			}
 
 			System.out.printf("\t Value of 'a' : %d \n", a);
 
 		}
 
+		
+		//// Creating an empty integer array of No Duplicates
+		int[] uniqueArr = new int[noDup.size()];
+		int k = 0;
+		System.out.printf("\t Array of Unique Non-Duplicate Values : [");
+		for (int i : noDup) {
+			uniqueArr[k++] = i;
+			System.out.printf("%d, ", i);
+		}
+		System.out.printf("]\n");
+		Arrays.sort(uniqueArr);
+		System.out.printf("\t Sorted Array Unique[] : %s \n", Arrays.toString(uniqueArr));
+		
+		
 		//// Creating an empty integer array
 		int[] dupArr = new int[dup.size()];
 		// Converting Set object to integer array
@@ -175,6 +199,61 @@ public class KPJavaInterview {
 		System.out.printf("]\n");
 
 		return dupArr;
+	}
+
+	public static int[] getUniqueNonDuplicateArray(int[] A) {
+
+		System.out.println("KP : KPJavaInterview -  com.kpjavaspringboot : getDuplicateInteger(int[] A)");
+
+		// KP : First Sort an Array
+		Arrays.sort(A);
+		System.out.printf("\t Sorted Array A[] : %s \n", Arrays.toString(A));
+
+		// KP : Find Duplicate
+		Set<Integer> set = new HashSet<Integer>();
+		Set<Integer> dup = new HashSet<Integer>();
+		Set<Integer> noDup = new HashSet<Integer>();
+		for (int a : A) {
+			if (set.add(a) == false) {
+				// // your duplicate element
+				System.out.printf("\t Duplicate Value of 'a' : %d \n", a);
+				dup.add(a);
+			}
+			else {
+				System.out.printf("\t Unique : NOT A Duplicate Value of 'a' : %d \n", a);
+				noDup.add(a);
+			}
+
+			System.out.printf("\t Value of 'a' : %d \n", a);
+
+		}
+
+		
+		//// Creating an empty integer array of No Duplicates
+		int[] uniqueArr = new int[noDup.size()];
+		int k = 0;
+		System.out.printf("\t Array of Unique Non-Duplicate Values : [");
+		for (int i : noDup) {
+			uniqueArr[k++] = i;
+			System.out.printf("%d, ", i);
+		}
+		System.out.printf("]\n");
+		Arrays.sort(uniqueArr);
+		System.out.printf("\t Sorted Array Unique[] : %s \n", Arrays.toString(uniqueArr));
+		
+		
+		//// Creating an empty integer array
+		int[] dupArr = new int[dup.size()];
+		// Converting Set object to integer array
+		int j = 0;
+		System.out.printf("\t Array of Duplicate Values : [");
+		for (int i : dup) {
+			dupArr[j++] = i;
+			System.out.printf("%d, ", i);
+		}
+		System.out.printf("]\n");
+
+		return uniqueArr;
 	}
 
 	/************************************
