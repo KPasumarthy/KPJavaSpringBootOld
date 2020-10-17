@@ -80,13 +80,107 @@ public class KPJavaInterviewExamples {
 		//// KP : Q&A : 5 - Get Java 8 : Arrays - Duplicates & Smallest Integers Solution
 		
 
-		///  KP :  Add Digits in an Integer Number : Q&A
+		///  KP :  Q&A : 6 - Add Digits in an Integer Number : Q&A
 		//KP : Count Number of Digits and Return the Sum
 		//System.out.println("KP : Count Number of Digits and Return the Sum?");
 		CountAndAddDigitsInANumber();
-		///  KP :  Add Digits in an Integer Number : Q&A
+		///  KP :  Q&A : 6 - Add Digits in an Integer Number : Q&A
+				
 
+		///  KP :  Q&A : 7 - Check if input String is a Palindrome : Q&A		
+		CheckPalindrome();
+		///  KP :  Q&A : 7 - Check if input String is a Palindrome : Q&A		
 	}
+	
+	
+	
+	/*******************************************
+	 * Java 8 : isPalindrome : Check a Variable?
+	 *******************************************/
+	
+	/***
+	 * 
+	 * Write a function to check if an Input Variable is a Palindrome?
+	 * 
+	 ***/
+	
+	public static void CheckPalindrome() {
+	System.out.println("KP : Check if Input String a Palindrome ");
+		// KP : Check Palindrome
+		String input = "Madam";
+		boolean flag = isPalindrome(input);
+		isPalindromeCaseSensitive(input, true);
+		isPalindromeCaseSensitive(input, false);		
+	}
+	
+		
+	public static boolean isPalindrome(String str) {
+
+		System.out.printf("Input Variable : '%s' \n", str);
+
+		// Pointers pointing to the beginning
+		// and the end of the string
+		int i = 0, j = str.length() - 1;
+
+		// While there are characters toc compare
+		while (i < j) {
+
+			// If there is a mismatch
+			if (str.charAt(i) != str.charAt(j)) {
+				System.out.printf("\t Input String : '%s', is NOT a Palindrome !\n", str);
+				return false;
+			}
+
+			// Increment first pointer and
+			// decrement the other
+			i++;
+			j--;
+		}
+
+		System.out.printf("\t Input String : '%s', is A Palindrome !\n", str);
+		return true;
+	}
+
+	public static boolean isPalindromeCaseSensitive(String str, boolean ignoreCase) {
+
+		System.out.printf("Input Variable : '%s'. Ignore Case : '%b' \n", str, ignoreCase);
+
+		// Pointers pointing to the beginning
+		// and the end of the string
+		int i = 0, j = str.length() - 1;
+
+		// While there are characters toc compare
+		while (i < j) {
+
+			if (ignoreCase == true) {
+				// If there is a mismatch : Case Ignored
+				if (str.toLowerCase().charAt(i) != str.toLowerCase().charAt(j)) {
+					System.out.printf("\t Input String : '%s', is NOT a Palindrome. Case Ignored : '%b' !\n", str, ignoreCase);
+					return false;
+				}
+			}
+			else
+			{
+				// If there is a mismatch : Case Sensitive
+				if (str.charAt(i) != str.charAt(j)) {
+					System.out.printf("\t Input String : '%s', is NOT a Palindrome. Case Sensitive !\n", str);
+					return false;
+				}
+			}
+
+			// Increment first pointer and
+			// decrement the other
+			i++;
+			j--;
+		}
+
+		System.out.printf("\t Input String : '%s', is A Palindrome !\n", str);
+		return true;
+	}
+
+	/*******************************************
+	 * Java 8 : isPalindrome : Check a Variable?
+	 *******************************************/
 
 	
 	/*******************************************
