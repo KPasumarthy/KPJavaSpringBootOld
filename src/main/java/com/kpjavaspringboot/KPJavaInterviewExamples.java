@@ -10,7 +10,8 @@ public class KPJavaInterviewExamples {
 
 	public static void getInterviewQuestions() {
 
-		/// ************************************ KP : Interview Questions : Q&A *****************************************///
+		/// ************************************ KP : Interview Questions : Q&A
+		/// *****************************************///
 
 		/// KP : Q&A : 1 - Can we add a variable of datatype 'byte'? What will happen if
 		/// we do not cast 'addition' operation?
@@ -60,7 +61,8 @@ public class KPJavaInterviewExamples {
 		pig.sleep();
 		//// KP : Q&A : 3 - Can Java have multiple inheritances?
 
-		//// KP : Q&A : 4 - Can Java have multiple inheritances through Java Abstracts & Extends
+		//// KP : Q&A : 4 - Can Java have multiple inheritances through Java Abstracts &
+		//// Extends
 		System.out.println("KP : Can Java have multiple inheritances through Java Abstracts & Extends?");
 		DebitCard dbCard = new DebitCard();
 		dbCard.cardNumber("1234567890");
@@ -70,50 +72,87 @@ public class KPJavaInterviewExamples {
 		CreditCard cdCard = new CreditCard();
 		cdCard.cardNumber("0123456789");
 		cdCard.cardType();
-		//// KP : Q&A : 4 - Can Java have multiple inheritances through Java Abstracts & Extends
+		//// KP : Q&A : 4 - Can Java have multiple inheritances through Java Abstracts &
+		//// Extends
 
-				
-		//// KP : Q&A : 5 - Get Java 8 : Arrays - Duplicates & Smallest Integers Solution	
-		//KP : Smallest Integer -  	Write a function: that, given an array A of N integers, 
-		//							returns the smallest positive integer (greater than 0) that does not occur in A.
+		//// KP : Q&A : 5 - Get Java 8 : Arrays - Duplicates & Smallest Integers
+		//// Solution
+		// KP : Smallest Integer - Write a function: that, given an array A of N
+		//// integers,
+		// returns the smallest positive integer (greater than 0) that does not occur in
+		//// A.
 		SmallestIntegerInterviewTest();
-		//// KP : Q&A : 5 - Get Java 8 : Arrays - Duplicates & Smallest Integers Solution
-		
+		//// KP : Q&A : 5 - Get Java 8 : Arrays - Duplicates & Smallest Integers
+		//// Solution
 
-		///  KP :  Q&A : 6 - Add Digits in an Integer Number : Q&A
-		//KP : Count Number of Digits and Return the Sum
-		//System.out.println("KP : Count Number of Digits and Return the Sum?");
+		/// KP : Q&A : 6 - Add Digits in an Integer Number : Q&A
+		// KP : Count Number of Digits and Return the Sum
+		// System.out.println("KP : Count Number of Digits and Return the Sum?");
 		CountAndAddDigitsInANumber();
-		///  KP :  Q&A : 6 - Add Digits in an Integer Number : Q&A
-				
+		/// KP : Q&A : 6 - Add Digits in an Integer Number : Q&A
 
-		///  KP :  Q&A : 7 - Check if input String is a Palindrome : Q&A		
+		/// KP : Q&A : 7 - Check if input String is a Palindrome : Q&A
 		CheckPalindrome();
-		///  KP :  Q&A : 7 - Check if input String is a Palindrome : Q&A		
+		/// KP : Q&A : 7 - Check if input String is a Palindrome : Q&A
+		
+		/// KP : Q&A : 8 - Compute Factorial Recursively : Q&A
+		ComputeFactorial();
+		/// KP : Q&A : 8 - Compute Factorial Recursively : Q&A
 	}
-	
-	
-	
+
+	/*******************************************
+	 * Java 8 : Factorial : Recursion
+	 *******************************************/
+
+	/***
+	 * 
+	 * Write a function to compute factorial recursively.
+	 * 
+	 ***/
+
+	public static void ComputeFactorial() {
+		
+		System.out.println("KP : Compute Factorial Recursively ");
+		// KP : Compute Factorial
+		int num = 27;
+		int result = factorial(num);
+		System.out.printf("\t Factorial of : '%d' = '%d'\n", num, result);
+	}
+
+	public static int factorial(int n) {
+
+		int output;
+		if (n == 1) {
+			return 1;
+		}
+		// Recursion: Function calling itself!!
+		output = factorial(n - 1) * n;
+		return output;
+	}
+
+	/*******************************************
+	 * Java 8 : Factorial : Recursion
+	 *******************************************/
+
 	/*******************************************
 	 * Java 8 : isPalindrome : Check a Variable?
 	 *******************************************/
-	
+
 	/***
 	 * 
 	 * Write a function to check if an Input Variable is a Palindrome?
 	 * 
 	 ***/
-	
+
 	public static void CheckPalindrome() {
-	System.out.println("KP : Check if Input String a Palindrome ");
+		System.out.println("KP : Check if Input String a Palindrome ");
 		// KP : Check Palindrome
 		String input = "Madam";
 		boolean flag = isPalindrome(input);
 		isPalindromeCaseSensitive(input, true);
-		isPalindromeCaseSensitive(input, false);		
+		isPalindromeCaseSensitive(input, false);
 	}
-	
-		
+
 	public static boolean isPalindrome(String str) {
 
 		System.out.printf("Input Variable : '%s' \n", str);
@@ -155,12 +194,11 @@ public class KPJavaInterviewExamples {
 			if (ignoreCase == true) {
 				// If there is a mismatch : Case Ignored
 				if (str.toLowerCase().charAt(i) != str.toLowerCase().charAt(j)) {
-					System.out.printf("\t Input String : '%s', is NOT a Palindrome. Case Ignored : '%b' !\n", str, ignoreCase);
+					System.out.printf("\t Input String : '%s', is NOT a Palindrome. Case Ignored : '%b' !\n", str,
+							ignoreCase);
 					return false;
 				}
-			}
-			else
-			{
+			} else {
 				// If there is a mismatch : Case Sensitive
 				if (str.charAt(i) != str.charAt(j)) {
 					System.out.printf("\t Input String : '%s', is NOT a Palindrome. Case Sensitive !\n", str);
@@ -182,11 +220,10 @@ public class KPJavaInterviewExamples {
 	 * Java 8 : isPalindrome : Check a Variable?
 	 *******************************************/
 
-	
 	/*******************************************
 	 * Java 8 : Add Digits in an Integer Number
 	 *******************************************/
-	
+
 	public static void CountAndAddDigitsInANumber() {
 
 		/************************************
@@ -195,57 +232,58 @@ public class KPJavaInterviewExamples {
 
 		/***
 		 * 
-		 * Write a function:
-		 * 	KP : Count Number of Digits and Return the Sum?
+		 * Write a function: KP : Count Number of Digits and Return the Sum?
 		 * 
 		 ***/
-		
+
 		System.out.println("KP : Count Number of Digits and Return the Sum?");
 		int num = 987654321;
 		int count = numberOfDigits(num);
 		int sum = addDigits(num);
-		System.out.printf("\t Count & Sum of All Digitis inside the Number : '%d'. Count : '%d', Sum : '%d' \n", num, count, sum );
-		
+		System.out.printf("\t Count & Sum of All Digitis inside the Number : '%d'. Count : '%d', Sum : '%d' \n", num,
+				count, sum);
+
 	}
-		
+
 	public static int numberOfDigits(int num) {
-		///KP : Count Number of Digits in an Number Operator - - Algorithm To Extract Individual Digits
-	    int count = 0;
-	    //num = 3452;
-	
-	    while(num != 0)
-	    {
-	        // num = num/10
-	        num /= 10;
-	        ++count;
-	    }
- 	    return count;
+		/// KP : Count Number of Digits in an Number Operator - - Algorithm To Extract
+		/// Individual Digits
+		int count = 0;
+		// num = 3452;
+
+		while (num != 0) {
+			// num = num/10
+			num /= 10;
+			++count;
+		}
+		return count;
 	}
-		
+
 	public static int addDigits(int num) {
-	    
+
 		int rem, sum = 0;
-        while (num != 0) {
-           	           	
-    	    rem = num%10;   //KP : 'rem' is the Remainder after the 'num' Modulus Operation. 
-    	    
-    	    //Sum = sum + rem;
-    	    sum += rem;
-    	    //System.out.printf("KP : KPJavaInterview - addDigits() - num : '%d', sum : '%d',  Individual Digits 'rem' : '%d' \n", num, sum, rem);
-    	    
-    	    //num = num /10;
-	        num /= 10;	           	   
-        }
-                
-	    return sum;
+		while (num != 0) {
+
+			rem = num % 10; // KP : 'rem' is the Remainder after the 'num' Modulus Operation.
+
+			// Sum = sum + rem;
+			sum += rem;
+			// System.out.printf("KP : KPJavaInterview - addDigits() - num : '%d', sum :
+			// '%d', Individual Digits 'rem' : '%d' \n", num, sum, rem);
+
+			// num = num /10;
+			num /= 10;
+		}
+
+		return sum;
 	}
-	
+
 	/*******************************************
 	 * Java 8 : Add Digits in an Integer Number
 	 *******************************************/
-	
-	
-	/// ************************************Java 8 : Arrays - Duplicates & Smallest Integers Solution *****************************************///
+
+	/// ************************************Java 8 : Arrays - Duplicates & Smallest
+	/// Integers Solution *****************************************///
 
 	public static void SmallestIntegerInterviewTest() {
 
@@ -285,13 +323,13 @@ public class KPJavaInterviewExamples {
 		System.out.println("KP : KPJavaInterview -  com.kpjavaspringboot : Smallest Positive Integer : " + val);
 
 	}
-	
+
 	public static int getSmallestPositiveInteger(int[] A) {
-	
+
 		//// KP : First Sort an Array
 		Arrays.sort(A);
 		System.out.printf("\t Sorted Array A[] : %s \n", Arrays.toString(A));
-	
+
 		//// KP : Create a Set
 		int j = 0;
 		Set<Integer> set = new HashSet<Integer>();
@@ -300,29 +338,28 @@ public class KPJavaInterviewExamples {
 				// // your duplicate element
 				// System.out.printf("\t Duplicate Value of 'a' : %d \n", a);
 			} else {
-				//System.out.printf("\t Value of 'a' : %d, 'j' : %d \n", a, j);
-	
+				// System.out.printf("\t Value of 'a' : %d, 'j' : %d \n", a, j);
+
 				if (a > 0) {
-	
+
 					j++;
 				}
-				
-				//System.out.printf("\t (1) Value of 'a' : %d, 'j' : %d \n", a, j);
-				
+
+				// System.out.printf("\t (1) Value of 'a' : %d, 'j' : %d \n", a, j);
+
 				if (a > j) {
-	
+
 					return j;
-				}
-				else {
-					if ( a == A[A.length-1]) {
+				} else {
+					if (a == A[A.length - 1]) {
 						j++;
-						//System.out.printf("\t (2) Value of 'a' : %d, 'j' : %d \n", a, j);
+						// System.out.printf("\t (2) Value of 'a' : %d, 'j' : %d \n", a, j);
 						return j;
 					}
-				}				
+				}
 			}
 		}
-	
+
 		return j++;
 	}
 
@@ -343,8 +380,7 @@ public class KPJavaInterviewExamples {
 				// // your duplicate element
 				System.out.printf("\t Duplicate Value of 'a' : %d \n", a);
 				dup.add(a);
-			}
-			else {
+			} else {
 				System.out.printf("\t Unique : NOT A Duplicate Value of 'a' : %d \n", a);
 				noDup.add(a);
 			}
@@ -353,7 +389,6 @@ public class KPJavaInterviewExamples {
 
 		}
 
-		
 		//// Creating an empty integer array of No Duplicates
 		int[] uniqueArr = new int[noDup.size()];
 		int k = 0;
@@ -365,8 +400,7 @@ public class KPJavaInterviewExamples {
 		System.out.printf("]\n");
 		Arrays.sort(uniqueArr);
 		System.out.printf("\t Sorted Array Unique[] : %s \n", Arrays.toString(uniqueArr));
-		
-		
+
 		//// Creating an empty integer array
 		int[] dupArr = new int[dup.size()];
 		// Converting Set object to integer array
@@ -398,8 +432,7 @@ public class KPJavaInterviewExamples {
 				// // your duplicate element
 				System.out.printf("\t Duplicate Value of 'a' : %d \n", a);
 				dup.add(a);
-			}
-			else {
+			} else {
 				System.out.printf("\t Unique : NOT A Duplicate Value of 'a' : %d \n", a);
 				noDup.add(a);
 			}
@@ -408,7 +441,6 @@ public class KPJavaInterviewExamples {
 
 		}
 
-		
 		//// Creating an empty integer array of No Duplicates
 		int[] uniqueArr = new int[noDup.size()];
 		int k = 0;
@@ -420,8 +452,7 @@ public class KPJavaInterviewExamples {
 		System.out.printf("]\n");
 		Arrays.sort(uniqueArr);
 		System.out.printf("\t Sorted Array Unique[] : %s \n", Arrays.toString(uniqueArr));
-		
-		
+
 		//// Creating an empty integer array
 		int[] dupArr = new int[dup.size()];
 		// Converting Set object to integer array
@@ -436,11 +467,11 @@ public class KPJavaInterviewExamples {
 		return uniqueArr;
 	}
 
-	
-	/// ************************************Java 8 : Arrays - Duplicates & Smallest Integers Solution *****************************************///
+	/// ************************************Java 8 : Arrays - Duplicates & Smallest
+	/// Integers Solution *****************************************///
 
-	
-	/// ************************************Java Abstracts & Extends *****************************************///
+	/// ************************************Java Abstracts & Extends
+	/// *****************************************///
 	// Abstract class
 	static abstract class Card {
 		// Abstract method (Does NOT have a body)
@@ -470,9 +501,11 @@ public class KPJavaInterviewExamples {
 			System.out.println("\t A 'CreditCard' extendes Abstract Class 'Card' Overide Method 'CardType' : CREDIT");
 		}
 	}
-	/// ************************************Java Abstracts & Extends *****************************************///
+	/// ************************************Java Abstracts & Extends
+	/// *****************************************///
 
-	/// ************************************Java Interfaces & Implements *****************************************///
+	/// ************************************Java Interfaces & Implements
+	/// *****************************************///
 
 	/***
 	 * Notes on Interfaces: Like abstract classes, interfaces cannot be used to
@@ -563,9 +596,11 @@ public class KPJavaInterviewExamples {
 			System.out.println("\t  A Car Class immplements 'Diesel' Fuel");
 		}
 	}
-	/// ************************************Java Interfaces & Implements *****************************************///
+	/// ************************************Java Interfaces & Implements
+	/// *****************************************///
 
-	/// ************************************Java Interfaces & Implements *****************************************///
+	/// ************************************Java Interfaces & Implements
+	/// *****************************************///
 
 	/***
 	 * Notes on Interfaces: Like abstract classes, interfaces cannot be used to
@@ -645,9 +680,11 @@ public class KPJavaInterviewExamples {
 
 		}
 	}
-	/// ************************************Java Interfaces & Implements *****************************************///
+	/// ************************************Java Interfaces & Implements
+	/// *****************************************///
 
-	/// ************************************Java Static & Nested Sub-Classes *****************************************///
+	/// ************************************Java Static & Nested Sub-Classes
+	/// *****************************************///
 
 	// Static nested class
 	public static class NestedStaticClass {
@@ -663,6 +700,7 @@ public class KPJavaInterviewExamples {
 					"\t Java Classes can be declared 'Static' only as a 'Sub-Class' in Java! Message from nested static class");
 		}
 	}
-	/// ************************************Java Static & Nested Sub-Classes *****************************************///
+	/// ************************************Java Static & Nested Sub-Classes
+	/// *****************************************///
 
 }

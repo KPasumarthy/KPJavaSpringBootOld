@@ -28,7 +28,30 @@ public class KPJavaInterview {
 		isPalindrome("Madam");
 		isPalindromeCaseSensitive("Madam", true);
 
+		// KP : Compute Factorial
+		int num = 27;
+		int result = factorial(num);
+		System.out.printf("Factorial of : '%d' = '%d'\n", num, result);
+
 	}
+
+	/*******************************************
+	 * Java 8 : Factorial : Recursion
+	 *******************************************/
+	public static int factorial(int n) {
+
+		int output;
+		if (n == 1) {
+			return 1;
+		}
+		// Recursion: Function calling itself!!
+		output = factorial(n - 1) * n;
+		return output;
+	}
+	
+	/*******************************************
+	 * Java 8 : Factorial : Recursion
+	 *******************************************/
 
 	/*******************************************
 	 * Java 8 : isPalindrome : Check a Variable?
@@ -74,12 +97,11 @@ public class KPJavaInterview {
 			if (ignoreCase == true) {
 				// If there is a mismatch : Case Ignored
 				if (str.toLowerCase().charAt(i) != str.toLowerCase().charAt(j)) {
-					System.out.printf("\t Input String : '%s', is NOT a Palindrome. Case Ignored : '%b' !\n", str, ignoreCase);
+					System.out.printf("\t Input String : '%s', is NOT a Palindrome. Case Ignored : '%b' !\n", str,
+							ignoreCase);
 					return false;
 				}
-			}
-			else
-			{
+			} else {
 				// If there is a mismatch : Case Sensitive
 				if (str.charAt(i) != str.charAt(j)) {
 					System.out.printf("\t Input String : '%s', is NOT a Palindrome. Case Sensitive !\n", str);
