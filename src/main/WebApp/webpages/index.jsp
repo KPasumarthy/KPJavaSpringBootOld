@@ -82,9 +82,9 @@ tr:nth-child(even) {
 		<h4>CRUD - HTTP : POST</h4>
 		<form name="myForm" method="post" action="/city">
 			City ID    : <input type="text" name="id" value="4081" /> </br>
-			City Name  : <input type="text" name="name" value="" /> 	</br>
+			City Name  : <input type="text" name="name" value="Penjandra" /> 	</br>
 			Country Code  : <input type="text" name="countryCode" value="IND" />	</br>
-			District Name : <input type="text" name="disrtict" value="Nityananda"/> </br>
+			District Name : <input type="text" name="disrtict" value="Krishna"/> </br>
 			Population    : <input type="text" name="population" value="999"/> </br>
 			<input type="submit" value="Post" />
 		</form>

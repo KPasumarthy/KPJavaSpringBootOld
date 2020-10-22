@@ -17,3 +17,7 @@ C:\>curl -X PUT -H "Content-Type: application/json" -d "{\"user\":"Sita"}" http:
 HTTP://PUT : UPDATE : {"user":Sita}
 C:\>curl -X DELETE -H "Content-Type: application/json" -d "{\"user\":"Ravana"}" http://localhost:8080/user/
 HTTP://DELETE : DELETE : {"user":Ravana}
+
+
+##HTTPS: SSL
+https://mkyong.com/spring-boot/spring-boot-ssl-https-examples/

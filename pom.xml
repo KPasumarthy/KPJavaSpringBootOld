@@ -65,6 +65,12 @@
 			<version>9.0.35</version>
 		</dependency>
 
+		<dependency>
+		  <groupId>org.apache.httpcomponents</groupId>
+		  <artifactId>httpclient</artifactId>
+		  <version>4.5.13</version>
+		</dependency>
+
 		<!-- KP : Print Elements to JSP Page -->
 		<dependency>
 			<groupId>jstl</groupId>
