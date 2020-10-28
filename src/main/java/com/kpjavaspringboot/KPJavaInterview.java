@@ -1,10 +1,25 @@
 package com.kpjavaspringboot;
 
+import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+
+import com.kpjavaspringboot.KPJavaInterviewExamples.Animal;
+import com.kpjavaspringboot.KPJavaInterviewExamples.Automobile;
+import com.kpjavaspringboot.KPJavaInterviewExamples.BiCycle;
+import com.kpjavaspringboot.KPJavaInterviewExamples.Car;
+import com.kpjavaspringboot.KPJavaInterviewExamples.Card;
+import com.kpjavaspringboot.KPJavaInterviewExamples.CreditCard;
+import com.kpjavaspringboot.KPJavaInterviewExamples.DebitCard;
+import com.kpjavaspringboot.KPJavaInterviewExamples.LivingBeing;
+import com.kpjavaspringboot.KPJavaInterviewExamples.NestedStaticClass;
+import com.kpjavaspringboot.KPJavaInterviewExamples.Pig;
+import com.kpjavaspringboot.KPJavaInterviewExamples.Piglet;
+import com.kpjavaspringboot.KPJavaInterviewExamples.Truck;
+import com.kpjavaspringboot.KPJavaInterviewExamples.Vehicle;
 
 public class KPJavaInterview {
 
@@ -13,6 +28,87 @@ public class KPJavaInterview {
 		// KP : Debug Print
 		System.out.println("KP : KPJavaInterview -  com.kpjavaspringboot : main()");
 
+		
+		/// ************************************ KP : Interview Questions : Q&A
+		/// *****************************************///
+
+		/// KP : Q&A : 1 - Can we add a variable of datatype 'byte'? What will happen if
+		/// we do not cast 'addition' operation?
+		System.out.println(
+				"KP : Can We add a variable of datatype 'byte'? What will happen if we do not cast 'addition' operation?");
+		byte b = 10;
+		b = (byte) (b + 1);
+		System.out.println(
+				"Value of the 'byte' type variable 'b' resulting in operation cast 'addition' operation? \n" + b);
+		/// KP : Q&A : 1 - Can we add a variable of datatype 'byte'? What will happen if
+
+		//// KP : Q&A : 2 - Can We declare a Top Level Class as Static in Java?
+		System.out.println("KP : Can We declare a Top Level Class as Static in Java?");
+		NestedStaticClass nscObj = new NestedStaticClass();
+		nscObj.printMessage();
+		//// KP : Q&A : 2 - Can We declare a Top Level Class as Static in Java?
+
+		//// KP : Q&A : 3 - Can Java have multiple inheritances through interface
+		//// implements?
+		System.out.println("KP : Can Java have multiple inheritances through interface implements?");
+		BiCycle bike = new BiCycle();
+		bike.Wheels();
+		bike.Axles();
+
+		Car car = new Car();
+		car.Wheels();
+		car.Axles();
+		car.Fuel();
+
+		Truck truck = new Truck();
+		truck.Wheels();
+		truck.Axles();
+		truck.Fuel();
+		//// KP : Q&A : 3 - Can Java have multiple inheritances?
+
+		//// KP : Q&A : 3 - Can Java have multiple inheritances?
+		System.out.println("KP : Can Java have multiple inheritances?");
+		Piglet piglet = new Piglet();
+		piglet.canBreath();
+		piglet.animalSound();
+		piglet.sleep();
+		piglet.willDie();
+
+		System.out.println("KP : Can Java have a single implmentation of an Interface?");
+		Pig pig = new Pig();
+		pig.animalSound();
+		pig.sleep();
+		//// KP : Q&A : 3 - Can Java have multiple inheritances?
+
+		//// KP : Q&A : 4 - Can Java have multiple inheritances through Java Abstracts &
+		//// Extends
+		System.out.println("KP : Can Java have multiple inheritances through Java Abstracts & Extends?");
+		DebitCard dbCard = new DebitCard();
+		dbCard.cardNumber("1234567890");
+		dbCard.cardType();
+
+		System.out.println("KP : Can Java have multiple inheritances through Java Abstracts & Extends?");
+		CreditCard cdCard = new CreditCard();
+		cdCard.cardNumber("0123456789");
+		cdCard.cardType();
+		//// KP : Q&A : 4 - Can Java have multiple inheritances through Java Abstracts &
+		//// Extends
+		
+		
+
+		//// KP : Q&A : 5 - Functional Interface implements only one function
+        int a = 5; 
+        
+        // lambda expression to define the calculate method 
+        Square s = (int x)->x*x; 
+  
+        // parameter passed and return type must be 
+        // same as defined in the prototype 
+        int ans = s.calculate(a); 
+        System.out.println("KP : Functional Interface implements only one function : Square : " + ans); 
+		//// KP : Q&A : 5 - Functional Interface implements only one function
+		//// Extends
+		
 		// KP : SmallestIntegerInterviewTest
 		// SmallestIntegerInterviewTest();
 
@@ -32,8 +128,295 @@ public class KPJavaInterview {
 		int num = 27;
 		int result = factorial(num);
 		System.out.printf("Factorial of : '%d' = '%d'\n", num, result);
-
+		
+		// KP : Print Fizz Buzz
+		int n = 2715;
+		FizzBuzz(n);
 	}
+	
+	/*******************************************
+	 * Java 8 : Print FizzBuzz 
+	 *******************************************/
+	public static void FizzBuzz(int n) {
+		int x = 1;
+        while (x <= n)
+        {
+            int r3 = (int)x % 3;
+            int r5 = (int)x % 5;
+
+            System.out.printf("%s ", x);
+            
+            if (r3 == 0)
+            	System.out.printf("Fizz");
+
+            if (r5 == 0)
+            	System.out.printf("Buzz");
+
+            System.out.println("");
+            x++;
+        }
+	}
+	
+	/*******************************************
+	 * Java 8 : Print FizzBuzz 
+	 *******************************************/
+	
+	/// ************************************Java 8 : Arrays - Duplicates & Smallest
+	/// Integers Solution *****************************************///
+
+	/// ************************************Java Abstracts & Extends
+	/// *****************************************///
+	// Abstract class
+	static abstract class Card {
+		// Abstract method (Does NOT have a body)
+		public abstract void cardType();
+
+		// Regular method (Does have a body)
+		public void cardNumber(String num) {
+			// The body of CardNumber() is provided here
+			System.out.println("\t An Abstract Class Card implements Regular Method Card Number : " + num);
+		}
+	}
+
+	// Subclass (DebitCard inherit from Card)
+	static class DebitCard extends Card {
+		@Override
+		public void cardType() {
+			// The body of CardNumber() is provided here
+			System.out.println("\t A 'DebitCard' extendes Abstract Class 'Card' Overide Method 'CardType' : DEBIT");
+		}
+	}
+
+	// Subclass (CreditCard inherit from Card)
+	static class CreditCard extends Card {
+		@Override
+		public void cardType() {
+			// The body of CardNumber() is provided here
+			System.out.println("\t A 'CreditCard' extendes Abstract Class 'Card' Overide Method 'CardType' : CREDIT");
+		}
+	}
+	/// ************************************Java Abstracts & Extends
+	/// *****************************************///
+
+	
+	
+	/// ************************************Java Functional Interfaces & Implements
+	/// *****************************************///	
+	// Java program to demonstrate lamda expressions to implement 
+	// a user defined functional interface. 
+	  
+	@FunctionalInterface
+	interface Square 
+	{ 
+	    int calculate(int x); 
+	} 
+	  
+	
+	
+	/// ************************************Java Functional Interfaces & Implements
+	/// *****************************************///	
+	
+	
+	/// ************************************Java Interfaces & Implements
+	/// *****************************************///
+
+	/***
+	 * Notes on Interfaces: Like abstract classes, interfaces cannot be used to
+	 * create objects (in the example above, it is not possible to create an
+	 * "Animal" object in the MyMainClass) Interface methods do not have a body -
+	 * the body is provided by the "implement" class On implementation of an
+	 * interface, you must override all of its methods Interface methods are by
+	 * default abstract and public Interface attributes are by default public,
+	 * static and final An interface cannot contain a constructor (as it cannot be
+	 * used to create objects)
+	 * 
+	 * Why And When To Use Interfaces? 1) To achieve security - hide certain details
+	 * and only show the important details of an object (interface).
+	 * 
+	 * 2) Java does not support "multiple inheritance" (a class can only inherit
+	 * from one superclass). However, it can be achieved with interfaces, because
+	 * the class can implement multiple interfaces. Note: To implement multiple
+	 * interfaces, separate them with a comma (see example below).
+	 * 
+	 * Why And When To Use Abstract Classes and Methods? 1) To achieve security -
+	 * hide certain details and only show the important details of an object. /
+	 ***/
+
+	// interface
+	interface Vehicle {
+		public void Wheels(); // interface method (does not have a body)
+
+		public void Axles(); // interface method (does not have a body)
+	}
+
+	interface Automobile {
+		public void Fuel();
+	}
+
+	// Bi-Cycle
+	static class BiCycle implements Vehicle {
+		@Override
+		public void Wheels() {
+			// The body of Wheels() is provided here
+			System.out.println("\t A BiCycle Class immplements '2' Wheels");
+		}
+
+		@Override
+		public void Axles() {
+			// The body of Axles() is provided here
+			System.out.println("\t A BiCycle Class immplements '0' Axles");
+		}
+	}
+
+	// Car : Multiple Inheritance through Interface Implments
+	static class Car implements Vehicle, Automobile {
+		@Override
+		public void Wheels() {
+			// The body of Wheels() is provided here
+			System.out.println("\t  A Car Class immplements '4' Wheels");
+		}
+
+		@Override
+		public void Axles() {
+			// The body of Axles() is provided here
+			System.out.println("\t  A Car Class immplements '2' Axles");
+		}
+
+		@Override
+		public void Fuel() {
+			// The body of Fuel() is provided here
+			System.out.println("\t  A Car Class immplements 'Gas' Fuel");
+		}
+	}
+
+	// Truck : Multiple Inheritance through Interface Implments
+	static class Truck implements Vehicle, Automobile {
+		@Override
+		public void Wheels() {
+			// The body of Wheels() is provided here
+			System.out.println("\t  A Truck Class immplements '8' Wheels");
+		}
+
+		@Override
+		public void Axles() {
+			// The body of Axles() is provided here
+			System.out.println("\t  A Car Class immplements '4' Axles");
+		}
+
+		@Override
+		public void Fuel() {
+			// The body of Fuel() is provided here
+			System.out.println("\t  A Car Class immplements 'Diesel' Fuel");
+		}
+	}
+	/// ************************************Java Interfaces & Implements
+	/// *****************************************///
+
+	/// ************************************Java Interfaces & Implements
+	/// *****************************************///
+
+	/***
+	 * Notes on Interfaces: Like abstract classes, interfaces cannot be used to
+	 * create objects (in the example above, it is not possible to create an
+	 * "Animal" object in the MyMainClass) Interface methods do not have a body -
+	 * the body is provided by the "implement" class On implementation of an
+	 * interface, you must override all of its methods Interface methods are by
+	 * default abstract and public Interface attributes are by default public,
+	 * static and final An interface cannot contain a constructor (as it cannot be
+	 * used to create objects)
+	 * 
+	 * Why And When To Use Interfaces? 1) To achieve security - hide certain details
+	 * and only show the important details of an object (interface).
+	 * 
+	 * 2) Java does not support "multiple inheritance" (a class can only inherit
+	 * from one superclass). However, it can be achieved with interfaces, because
+	 * the class can implement multiple interfaces. Note: To implement multiple
+	 * interfaces, separate them with a comma (see example below).
+	 * 
+	 * Why And When To Use Abstract Classes and Methods? 1) To achieve security -
+	 * hide certain details and only show the important details of an object. /
+	 ***/
+
+	// interface
+	interface Animal {
+
+		public void animalSound(); // interface method (does not have a body)
+
+		public void sleep(); // interface method (does not have a body)
+	}
+
+	// interface
+	interface LivingBeing {
+		public void canBreath(); // interface method (does not have a body)
+
+		public void willDie(); // interface method (does not have a body)
+	}
+
+	// Pig "implements" the Animal interface
+	static class Pig implements Animal {
+		public void animalSound() {
+			// The body of animalSound() is provided here
+			System.out.println("\t  The pig says: wee wee");
+		}
+
+		public void sleep() {
+			// The body of sleep() is provided here
+			System.out.println("\t  The pig sleeps: Zzz");
+		}
+	}
+
+	// Pig "implements" the Animal & LivingBeing interface
+	public static class Piglet implements Animal, LivingBeing {
+		@Override
+		public void animalSound() {
+			// The body of animalSound() is provided here
+			System.out.println("\t  The piglet says: wee wee");
+		}
+
+		@Override
+		public void sleep() {
+			// The body of sleep() is provided here
+			System.out.println("\t  The piglet sleeps: Zzz");
+		}
+
+		@Override
+		public void canBreath() {
+			// TODO Auto-generated method stub
+			System.out.println("\t  The piglet canBreath: Breaths - Hence Alive ");
+
+		}
+
+		@Override
+		public void willDie() {
+			// TODO Auto-generated method stub
+			System.out.println("\t  The piglet willDie: Death is the eventual end of life - Hence a Living Being ");
+
+		}
+	}
+	/// ************************************Java Interfaces & Implements
+	/// *****************************************///
+
+	/// ************************************Java Static & Nested Sub-Classes
+	/// *****************************************///
+
+	// Static nested class
+	public static class NestedStaticClass {
+
+		// Only static members of Outer class
+		// is directly accessible in nested
+		// static class
+		public void printMessage() {
+
+			// Try making 'message' a non-static
+			// variable, there will be compiler error
+			System.out.println(
+					"\t Java Classes can be declared 'Static' only as a 'Sub-Class' in Java! Message from nested static class");
+		}
+	}
+	/// ************************************Java Static & Nested Sub-Classes
+	/// *****************************************///
+	
+	
 
 	/*******************************************
 	 * Java 8 : Factorial : Recursion
