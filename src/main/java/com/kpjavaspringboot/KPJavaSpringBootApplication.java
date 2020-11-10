@@ -12,8 +12,7 @@ import com.kpjavaspringboot.model.City;
 public class KPJavaSpringBootApplication {
 
 	public static void main(String[] args) {
-		
-	
+
 		////Spring Application Context 
 		//SpringApplication.run(KPJavaSpringBootApplication.class, args);
 		ConfigurableApplicationContext context = SpringApplication.run(KPJavaSpringBootApplication.class, args);
@@ -30,7 +29,6 @@ public class KPJavaSpringBootApplication {
 		
 		////KP : Master Card Interview Test
 		
-				
 		////Context Bean - Dependency Injection (DI) :  DI City Component 
 		City city = context.getBean(City.class);
 		city.display();

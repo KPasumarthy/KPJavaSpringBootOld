@@ -31,8 +31,15 @@ build/
 .vscode/
 
 ##KP : Ignore Files
-Literature/Capture-2.JPG
-Literature/TestInterviewCapture.JPG
+src/main/java/com/kpjavaspringboot/Literature/Capture1.JPG
+src/main/java/com/kpjavaspringboot/Literature/Capture2.JPG
+src/main/java/com/kpjavaspringboot/Literature/Capture3.JPG
+src/main/java/com/kpjavaspringboot/Literature/Capture4.JPG
+src/main/java/com/kpjavaspringboot/Literature/Capture5.JPG
+src/main/java/com/kpjavaspringboot/Literature/Capture6.JPG
+src/main/java/com/kpjavaspringboot/Literature/Capture7.JPG
+src/main/java/com/kpjavaspringboot/Literature/Capture-2.JPG
+src/main/java/com/kpjavaspringboot/Literature/TestInterviewCapture.JPG
 src/main/java/com/kpjavaspringboot/KPJavaInterview.java
 src/main/java/com/kpjavaspringboot/KPJavaInterview.txt
 src/main/java/com/kpjavaspringboot/KPJavaInterview-XX.txt
