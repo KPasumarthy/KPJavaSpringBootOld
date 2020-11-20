@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 
+import com.kpjavaspringboot.interview.KPJavaInterviewExamples;
 import com.kpjavaspringboot.model.City;
 
 

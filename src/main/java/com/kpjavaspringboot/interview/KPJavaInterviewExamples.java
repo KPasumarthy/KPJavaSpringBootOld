@@ -1,4 +1,4 @@
-package com.kpjavaspringboot;
+package com.kpjavaspringboot.interview;
 
 import java.util.Arrays;
 import java.util.HashSet;
