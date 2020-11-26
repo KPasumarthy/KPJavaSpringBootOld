@@ -38,7 +38,7 @@ public class KPMRTest {
 
 
 	public static void getUniqueElements(int[] A) {
-		// Trial : 1 - Ramani.Mukesh@gmail.com
+
 		System.out.println("KP : Java Interview Test : getUniqueElements()");
 
 		HashMap hm = new HashMap();
@@ -293,7 +293,7 @@ public class KPMRTest {
 	}
 
 	public static int getSumOfUniqueElements(int[] A) {
-		// Trial : 1 - Ramani.Mukesh@gmail.com
+
 		System.out.println("KP : Java Interview Test : getSumOfUniqueElements");
 
 		HashMap hm = new HashMap();
