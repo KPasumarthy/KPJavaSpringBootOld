@@ -79,14 +79,30 @@ public class KPMRTest {
 			}
 		}
 
-		System.out.println("The Unique HashMap : " + hm);
-		System.out.println("The HashSet: " + hs);
-		System.out.println("The Non-Duplicate Unique HashSet : " + hsUnq);
-		System.out.println("The Duplicate & Repetitive HashSet : " + hsRep);
-		System.out.println("The Sum of Duplicate & Repetitive Unique Elements : " + sumUnqElem);
-		System.out.println("The Sum of Non-Duplicate & Non-Repetitive Unique Elements : " + sumUnqElem);
+		System.out.println("Unique HashMap : " + hm);
+		System.out.println("\t HashSet: " + hs);
+		System.out.println("\t Non-Duplicate Unique HashSet : " + hsUnq);
+		System.out.println("\t Duplicate & Repetitive HashSet : " + hsRep);
+		System.out.println("\t Sum of Non-Duplicate & Non-Repetitive Unique Elements : " + sumUnqElem);
 
-		//return sumUnqElem;
+		
+		//// Creating an Integer Array of Repetitive (or) Duplicate Elements
+		int[] dupArr = new int[hsRep.size()];
+		i = 0;
+		for (Object a :  hsRep) {
+			dupArr[i++] = (int) a;
+		}		
+		System.out.println("Array - Repetitive-Duplicate Elements : " + Arrays.toString(dupArr));
+		
+		
+		//// Creating an Integer Array of Non-Repetitive Elements
+		int[] unqArr = new int[hsUnq.size()];
+		i = 0;
+		for (Object a :  hsUnq) {
+			unqArr[i++] = (int) a;
+		}		
+		System.out.println("Array - Non-Duplicate Unique Elements : " + Arrays.toString(unqArr));
+		
 
 	}
 
