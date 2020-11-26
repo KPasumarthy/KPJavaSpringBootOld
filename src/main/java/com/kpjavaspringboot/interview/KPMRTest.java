@@ -15,12 +15,19 @@ public class KPMRTest {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
+		//What Does the 'method(null)' print
+		 method(null);
+		
 		// Eliminate Repetitions
 		int A[] = { 3, 2, 3, 2, 3, 2, 5, 7, 3, 2 };
 		getUniqueElements(A);
+		//int sumUnqElem = getUniqueElements(A);
+		//System.out.println("The Sum of Non-Duplicate & Non-Repetitive Unique Elements : " + sumUnqElem);
 
 	}
 
+	////public static int getUniqueElements(int[] A) {
 	public static void getUniqueElements(int[] A) {
 		// Trial : 1 - Ramani.Mukesh@gmail.com
 		System.out.println("KP : Java Interview Test");
@@ -33,11 +40,11 @@ public class KPMRTest {
 			if (hm.get(a) == null) {
 				i = 0;
 				hm.put(a, ++i);
-				//System.out.printf("HM : a=%d, i=%d \n", a, i);
+				// System.out.printf("HM : a=%d, i=%d \n", a, i);
 			} else {
 				i = (int) hm.get(a);
 				hm.put(a, ++i);
-				//System.out.printf("HM : a=%d, i=%d \n", a, i);
+				// System.out.printf("HM : a=%d, i=%d \n", a, i);
 			}
 
 			if (!hs.contains(a)) {
@@ -52,6 +59,7 @@ public class KPMRTest {
 
 		// Remove Duplicates & Repetitions
 		// Getting an iterator
+		int sumUnqElem = 0;
 		Iterator hmIterator = hm.entrySet().iterator();
 		HashSet hsUnq = new HashSet();
 		HashSet hsRep = new HashSet();
@@ -59,10 +67,13 @@ public class KPMRTest {
 		while (hmIterator.hasNext()) {
 			Map.Entry mapElement = (Map.Entry) hmIterator.next();
 			int value = ((int) mapElement.getValue());
-			//System.out.println( "The HashMapElement : Key =  " + mapElement.getKey() + " Value = " + mapElement.getValue());
+			// System.out.println( "The HashMapElement : Key = " + mapElement.getKey() + "
+			// Value = " + mapElement.getValue());
 
 			if (value == 1) {
+
 				hsUnq.add(mapElement.getKey());
+				sumUnqElem += (int) mapElement.getKey();
 			} else {
 				hsRep.add(mapElement.getKey());
 			}
@@ -72,8 +83,19 @@ public class KPMRTest {
 		System.out.println("The HashSet: " + hs);
 		System.out.println("The Non-Duplicate Unique HashSet : " + hsUnq);
 		System.out.println("The Duplicate & Repetitive HashSet : " + hsRep);
-	
-		
+		System.out.println("The Sum of Duplicate & Repetitive Unique Elements : " + sumUnqElem);
+		System.out.println("The Sum of Non-Duplicate & Non-Repetitive Unique Elements : " + sumUnqElem);
+
+		//return sumUnqElem;
+
+	}
+
+	public static void method(Object o) {
+		System.out.println("Object method");
+	}
+
+	public static void method(String s) {
+		System.out.println("String method");
 	}
 
 }
