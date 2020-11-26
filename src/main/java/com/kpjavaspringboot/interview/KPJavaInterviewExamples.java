@@ -1,7 +1,10 @@
 package com.kpjavaspringboot.interview;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.Set;
 
 //import com.kpjavaspringboot.KPJavaSpringBootApplication.NestedStaticClass;
@@ -94,10 +97,29 @@ public class KPJavaInterviewExamples {
 		/// KP : Q&A : 7 - Check if input String is a Palindrome : Q&A
 		CheckPalindrome();
 		/// KP : Q&A : 7 - Check if input String is a Palindrome : Q&A
-		
+
 		/// KP : Q&A : 8 - Compute Factorial Recursively : Q&A
 		ComputeFactorial();
 		/// KP : Q&A : 8 - Compute Factorial Recursively : Q&A
+		
+		/// KP : Q&A : 9- All Permutations of a Java String
+		String str = "ABCDEF"; ///"XYZ"
+		allStringPermute(str);
+		/// KP : Q&A : 9 - All Permutations of a Java String
+			
+		
+		/// KP : Q&A : 10 - Return Duplicate (or) Repetitive Elements : Q&A
+		// Eliminate Repetitions
+		// int A[] = { 3, 2, 3, 2, 3, 2, 5, 7, 3, 2 };
+		int[] A = { -7, -11, -3, 1, 3, 0, 0, 0, 9, 7, 8, 6, 4, 1, 2, 2, -100, 90, 98, 625, -7, -11, 625 };
+		getUniqueElements(A);
+		getDuplicateInteger(A);
+		getUniqueNonDuplicateArray(A);
+		getSumOfUniqueElements(A);
+		getSmallestPositiveInteger(A);
+		/// KP : Q&A : 10 - Compute Factorial Recursively : Q&A
+		
+		
 	}
 
 	/*******************************************
@@ -111,7 +133,7 @@ public class KPJavaInterviewExamples {
 	 ***/
 
 	public static void ComputeFactorial() {
-		
+
 		System.out.println("KP : Compute Factorial Recursively ");
 		// KP : Compute Factorial
 		int num = 27;
@@ -134,6 +156,63 @@ public class KPJavaInterviewExamples {
 	 * Java 8 : Factorial : Recursion
 	 *******************************************/
 
+	/*******************************************
+	 * Java 8 : All Permutations of a Java String
+	 *******************************************/
+
+	// Java program to print all permutations of a
+	// given string.
+	public static void allStringPermute(String str) {
+
+		System.out.println("KP : KPJavaInterview : Hello : Permute a String '" + str + "'" );
+		
+		// String str = "XYZ";
+		int n = str.length();
+		permute(str, 0, n - 1);
+	}
+
+	/**
+	 * permutation function
+	 * 
+	 * @param str string to calculate permutation for
+	 * @param l   starting index
+	 * @param r   end index
+	 */
+	private static void permute(String str, int l, int r) {
+		if (l == r)
+			System.out.print("\t"+ str);
+		else {
+			for (int i = l; i <= r; i++) {
+				str = swap(str, l, i);
+				permute(str, l + 1, r);
+				str = swap(str, l, i);
+			}
+		}
+	}
+
+	/**
+	 * Swap Characters at position
+	 * 
+	 * @param a string value
+	 * @param i position 1
+	 * @param j position 2
+	 * @return swapped string
+	 */
+	public static String swap(String a, int i, int j) {
+		char temp;
+		char[] charArray = a.toCharArray();
+		temp = charArray[i];
+		charArray[i] = charArray[j];
+		charArray[j] = temp;
+		return String.valueOf(charArray);
+	}
+
+	/*******************************************
+	 * Java 8 : All Permutations of a Java String
+	 *******************************************/
+	
+	
+	
 	/*******************************************
 	 * Java 8 : isPalindrome : Check a Variable?
 	 *******************************************/
@@ -324,149 +403,322 @@ public class KPJavaInterviewExamples {
 
 	}
 
+	public static void getUniqueElements(int[] A) {
+		// Trial : 1 - Ramani.Mukesh@gmail.com
+		System.out.println("KP : Java Interview Test : getUniqueElements()");
+
+		HashMap hm = new HashMap();
+		HashSet hs = new HashSet();
+		int i = 0;
+		for (int a : A) {
+
+			if (hm.get(a) == null) {
+				i = 0;
+				hm.put(a, ++i);
+				// System.out.printf("HM : a=%d, i=%d \n", a, i);
+			} else {
+				i = (int) hm.get(a);
+				hm.put(a, ++i);
+				// System.out.printf("HM : a=%d, i=%d \n", a, i);
+			}
+
+			if (!hs.contains(a)) {
+				hs.add(a);
+			}
+
+		}
+		System.out.println("The Input Array : " + Arrays.toString(A));
+		Arrays.sort(A);
+		System.out.println("The Sorted Input Array : " + Arrays.toString(A));
+		System.out.println("The HashMap : " + hm);
+
+		// Remove Duplicates & Repetitions
+		// Getting an iterator
+		int sumUnqElem = 0;
+		Iterator hmIterator = hm.entrySet().iterator();
+		HashSet hsUnq = new HashSet();
+		HashSet hsRep = new HashSet();
+		// Iterate through the hashmap
+		while (hmIterator.hasNext()) {
+			Map.Entry mapElement = (Map.Entry) hmIterator.next();
+			int value = ((int) mapElement.getValue());
+			// System.out.println( "The HashMapElement : Key = " + mapElement.getKey() + "
+			// Value = " + mapElement.getValue());
+
+			if (value == 1) {
+
+				hsUnq.add(mapElement.getKey());
+				sumUnqElem += (int) mapElement.getKey();
+			} else {
+				hsRep.add(mapElement.getKey());
+			}
+		}
+
+		System.out.println("Unique HashMap : " + hm);
+		System.out.println("\t HashSet: " + hs);
+		System.out.println("\t Non-Duplicate Unique HashSet : " + hsUnq);
+		System.out.println("\t Duplicate & Repetitive HashSet : " + hsRep);
+		System.out.println("\t Sum of Non-Duplicate & Non-Repetitive Unique Elements : " + sumUnqElem);
+
+		//// Creating an Integer Array of Repetitive (or) Duplicate Elements
+		int[] dupArr = new int[hsRep.size()];
+		i = 0;
+		for (Object a : hsRep) {
+			dupArr[i++] = (int) a;
+		}
+		Arrays.sort(dupArr);
+		System.out.println("Array - Repetitive-Duplicate Elements : " + Arrays.toString(dupArr));
+
+		//// Creating an Integer Array of Non-Repetitive Elements
+		int[] unqArr = new int[hsUnq.size()];
+		i = 0;
+		for (Object a : hsUnq) {
+			unqArr[i++] = (int) a;
+		}
+		Arrays.sort(unqArr);
+		System.out.println("Array - Non-Duplicate Unique Elements : " + Arrays.toString(unqArr));
+
+	}
+
 	public static int getSmallestPositiveInteger(int[] A) {
 
 		//// KP : First Sort an Array
 		Arrays.sort(A);
 		System.out.printf("\t Sorted Array A[] : %s \n", Arrays.toString(A));
 
-		//// KP : Create a Set
-		int j = 0;
+		//// KP :
 		Set<Integer> set = new HashSet<Integer>();
 		for (int a : A) {
-			if (set.add(a) == false) {
-				// // your duplicate element
-				// System.out.printf("\t Duplicate Value of 'a' : %d \n", a);
-			} else {
-				// System.out.printf("\t Value of 'a' : %d, 'j' : %d \n", a, j);
-
-				if (a > 0) {
-
-					j++;
-				}
-
-				// System.out.printf("\t (1) Value of 'a' : %d, 'j' : %d \n", a, j);
-
-				if (a > j) {
-
-					return j;
-				} else {
-					if (a == A[A.length - 1]) {
-						j++;
-						// System.out.printf("\t (2) Value of 'a' : %d, 'j' : %d \n", a, j);
-						return j;
-					}
-				}
-			}
+			if (a > 0)
+				return a;
 		}
 
-		return j++;
+		return (Integer) null;
 	}
 
 	public static int[] getDuplicateInteger(int[] A) {
 
 		System.out.println("KP : KPJavaInterview -  com.kpjavaspringboot : getDuplicateInteger(int[] A)");
 
-		// KP : First Sort an Array
-		Arrays.sort(A);
-		System.out.printf("\t Sorted Array A[] : %s \n", Arrays.toString(A));
+		// Trial : 1 - Ramani.Mukesh@gmail.com
+		System.out.println("KP : Java Interview Test : getUniqueElements()");
 
-		// KP : Find Duplicate
-		Set<Integer> set = new HashSet<Integer>();
-		Set<Integer> dup = new HashSet<Integer>();
-		Set<Integer> noDup = new HashSet<Integer>();
+		HashMap hm = new HashMap();
+		HashSet hs = new HashSet();
+		int i = 0;
 		for (int a : A) {
-			if (set.add(a) == false) {
-				// // your duplicate element
-				System.out.printf("\t Duplicate Value of 'a' : %d \n", a);
-				dup.add(a);
+
+			if (hm.get(a) == null) {
+				i = 0;
+				hm.put(a, ++i);
+				// System.out.printf("HM : a=%d, i=%d \n", a, i);
 			} else {
-				System.out.printf("\t Unique : NOT A Duplicate Value of 'a' : %d \n", a);
-				noDup.add(a);
+				i = (int) hm.get(a);
+				hm.put(a, ++i);
+				// System.out.printf("HM : a=%d, i=%d \n", a, i);
 			}
 
-			System.out.printf("\t Value of 'a' : %d \n", a);
+			if (!hs.contains(a)) {
+				hs.add(a);
+			}
 
 		}
+		System.out.println("The Input Array : " + Arrays.toString(A));
+		Arrays.sort(A);
+		System.out.println("The Sorted Input Array : " + Arrays.toString(A));
+		System.out.println("The HashMap : " + hm);
 
-		//// Creating an empty integer array of No Duplicates
-		int[] uniqueArr = new int[noDup.size()];
-		int k = 0;
-		System.out.printf("\t Array of Unique Non-Duplicate Values : [");
-		for (int i : noDup) {
-			uniqueArr[k++] = i;
-			System.out.printf("%d, ", i);
-		}
-		System.out.printf("]\n");
-		Arrays.sort(uniqueArr);
-		System.out.printf("\t Sorted Array Unique[] : %s \n", Arrays.toString(uniqueArr));
+		// Remove Duplicates & Repetitions
+		// Getting an iterator
+		int sumUnqElem = 0;
+		Iterator hmIterator = hm.entrySet().iterator();
+		HashSet hsUnq = new HashSet();
+		HashSet hsRep = new HashSet();
+		// Iterate through the hashmap
+		while (hmIterator.hasNext()) {
+			Map.Entry mapElement = (Map.Entry) hmIterator.next();
+			int value = ((int) mapElement.getValue());
+			// System.out.println( "The HashMapElement : Key = " + mapElement.getKey() + "
+			// Value = " + mapElement.getValue());
 
-		//// Creating an empty integer array
-		int[] dupArr = new int[dup.size()];
-		// Converting Set object to integer array
-		int j = 0;
-		System.out.printf("\t Array of Duplicate Values : [");
-		for (int i : dup) {
-			dupArr[j++] = i;
-			System.out.printf("%d, ", i);
+			if (value == 1) {
+
+				hsUnq.add(mapElement.getKey());
+				sumUnqElem += (int) mapElement.getKey();
+			} else {
+				hsRep.add(mapElement.getKey());
+			}
 		}
-		System.out.printf("]\n");
+
+		System.out.println("Unique HashMap : " + hm);
+		System.out.println("\t HashSet: " + hs);
+		System.out.println("\t Non-Duplicate Unique HashSet : " + hsUnq);
+		System.out.println("\t Duplicate & Repetitive HashSet : " + hsRep);
+		System.out.println("\t Sum of Non-Duplicate & Non-Repetitive Unique Elements : " + sumUnqElem);
+
+		//// Creating an Integer Array of Repetitive (or) Duplicate Elements
+		int[] dupArr = new int[hsRep.size()];
+		i = 0;
+		for (Object a : hsRep) {
+			dupArr[i++] = (int) a;
+		}
+		Arrays.sort(dupArr);
+		System.out.println("Array - Repetitive-Duplicate Elements : " + Arrays.toString(dupArr));
+
+		//// Creating an Integer Array of Non-Repetitive Elements
+		int[] unqArr = new int[hsUnq.size()];
+		i = 0;
+		for (Object a : hsUnq) {
+			unqArr[i++] = (int) a;
+		}
+		Arrays.sort(unqArr);
+		System.out.println("Array - Non-Duplicate Unique Elements : " + Arrays.toString(unqArr));
 
 		return dupArr;
 	}
 
 	public static int[] getUniqueNonDuplicateArray(int[] A) {
 
-		System.out.println("KP : KPJavaInterview -  com.kpjavaspringboot : getDuplicateInteger(int[] A)");
+		System.out.println("KP : KPJavaInterview -  com.kpjavaspringboot : getUniqueNonDuplicateArray(int[] A)");
 
-		// KP : First Sort an Array
-		Arrays.sort(A);
-		System.out.printf("\t Sorted Array A[] : %s \n", Arrays.toString(A));
+		// Trial : 1 - Ramani.Mukesh@gmail.com
+		System.out.println("KP : Java Interview Test : getUniqueElements()");
 
-		// KP : Find Duplicate
-		Set<Integer> set = new HashSet<Integer>();
-		Set<Integer> dup = new HashSet<Integer>();
-		Set<Integer> noDup = new HashSet<Integer>();
+		HashMap hm = new HashMap();
+		HashSet hs = new HashSet();
+		int i = 0;
 		for (int a : A) {
-			if (set.add(a) == false) {
-				// // your duplicate element
-				System.out.printf("\t Duplicate Value of 'a' : %d \n", a);
-				dup.add(a);
+
+			if (hm.get(a) == null) {
+				i = 0;
+				hm.put(a, ++i);
+				// System.out.printf("HM : a=%d, i=%d \n", a, i);
 			} else {
-				System.out.printf("\t Unique : NOT A Duplicate Value of 'a' : %d \n", a);
-				noDup.add(a);
+				i = (int) hm.get(a);
+				hm.put(a, ++i);
+				// System.out.printf("HM : a=%d, i=%d \n", a, i);
 			}
 
-			System.out.printf("\t Value of 'a' : %d \n", a);
+			if (!hs.contains(a)) {
+				hs.add(a);
+			}
 
 		}
+		System.out.println("The Input Array : " + Arrays.toString(A));
+		Arrays.sort(A);
+		System.out.println("The Sorted Input Array : " + Arrays.toString(A));
+		System.out.println("The HashMap : " + hm);
 
-		//// Creating an empty integer array of No Duplicates
-		int[] uniqueArr = new int[noDup.size()];
-		int k = 0;
-		System.out.printf("\t Array of Unique Non-Duplicate Values : [");
-		for (int i : noDup) {
-			uniqueArr[k++] = i;
-			System.out.printf("%d, ", i);
+		// Remove Duplicates & Repetitions
+		// Getting an iterator
+		int sumUnqElem = 0;
+		Iterator hmIterator = hm.entrySet().iterator();
+		HashSet hsUnq = new HashSet();
+		HashSet hsRep = new HashSet();
+		// Iterate through the hashmap
+		while (hmIterator.hasNext()) {
+			Map.Entry mapElement = (Map.Entry) hmIterator.next();
+			int value = ((int) mapElement.getValue());
+			// System.out.println( "The HashMapElement : Key = " + mapElement.getKey() + "
+			// Value = " + mapElement.getValue());
+
+			if (value == 1) {
+
+				hsUnq.add(mapElement.getKey());
+				sumUnqElem += (int) mapElement.getKey();
+			} else {
+				hsRep.add(mapElement.getKey());
+			}
 		}
-		System.out.printf("]\n");
-		Arrays.sort(uniqueArr);
-		System.out.printf("\t Sorted Array Unique[] : %s \n", Arrays.toString(uniqueArr));
 
-		//// Creating an empty integer array
-		int[] dupArr = new int[dup.size()];
-		// Converting Set object to integer array
-		int j = 0;
-		System.out.printf("\t Array of Duplicate Values : [");
-		for (int i : dup) {
-			dupArr[j++] = i;
-			System.out.printf("%d, ", i);
+		System.out.println("Unique HashMap : " + hm);
+		System.out.println("\t HashSet: " + hs);
+		System.out.println("\t Non-Duplicate Unique HashSet : " + hsUnq);
+		System.out.println("\t Duplicate & Repetitive HashSet : " + hsRep);
+		System.out.println("\t Sum of Non-Duplicate & Non-Repetitive Unique Elements : " + sumUnqElem);
+
+		//// Creating an Integer Array of Repetitive (or) Duplicate Elements
+		int[] dupArr = new int[hsRep.size()];
+		i = 0;
+		for (Object a : hsRep) {
+			dupArr[i++] = (int) a;
 		}
-		System.out.printf("]\n");
+		Arrays.sort(dupArr);
+		System.out.println("Array - Repetitive-Duplicate Elements : " + Arrays.toString(dupArr));
 
-		return uniqueArr;
+		//// Creating an Integer Array of Non-Repetitive Elements
+		int[] unqArr = new int[hsUnq.size()];
+		i = 0;
+		for (Object a : hsUnq) {
+			unqArr[i++] = (int) a;
+		}
+		Arrays.sort(unqArr);
+		System.out.println("Array - Non-Duplicate Unique Elements : " + Arrays.toString(unqArr));
+
+		return unqArr;
 	}
 
+	public static int getSumOfUniqueElements(int[] A) {
+		// Trial : 1 - Ramani.Mukesh@gmail.com
+		System.out.println("KP : Java Interview Test : getSumOfUniqueElements");
+
+		HashMap hm = new HashMap();
+		HashSet hs = new HashSet();
+		int i = 0;
+		for (int a : A) {
+
+			if (hm.get(a) == null) {
+				i = 0;
+				hm.put(a, ++i);
+				//System.out.printf("HM : a=%d, i=%d \n", a, i);
+			} else {
+				i = (int) hm.get(a);
+				hm.put(a, ++i);
+				//System.out.printf("HM : a=%d, i=%d \n", a, i);
+			}
+
+			if (!hs.contains(a)) {
+				hs.add(a);
+			}
+
+		}
+		System.out.println("The Input Array : " + Arrays.toString(A));
+		Arrays.sort(A);
+		System.out.println("The Input Array : " + Arrays.toString(A));
+		System.out.println("The HashMap : " + hm);
+
+		// Remove Duplicates & Repetitions
+		// Getting an iterator
+		int sumUnqElem = 0;
+		Iterator hmIterator = hm.entrySet().iterator();
+		HashSet hsUnq = new HashSet();
+		HashSet hsRep = new HashSet();
+		// Iterate through the hashmap
+		while (hmIterator.hasNext()) {
+			Map.Entry mapElement = (Map.Entry) hmIterator.next();
+			int value = ((int) mapElement.getValue());
+			//System.out.println( "The HashMapElement : Key =  " + mapElement.getKey() + " Value = " + mapElement.getValue());
+
+			if (value == 1) {
+				
+				hsUnq.add(mapElement.getKey());
+				sumUnqElem += (int)mapElement.getKey();
+			} else {
+				hsRep.add(mapElement.getKey());
+			}
+		}
+
+		System.out.println("The Unique HashMap : " + hm);
+		System.out.println("The HashSet: " + hs);
+		System.out.println("The Non-Duplicate Unique HashSet : " + hsUnq);
+		System.out.println("The Duplicate & Repetitive HashSet : " + hsRep);
+		System.out.println("The Sum of Duplicate & Repetitive Unique Elements : " + sumUnqElem);
+		System.out.println("The Sum of Non-Duplicate & Non-Repetitive Unique Elements : " + sumUnqElem);
+		
+		return sumUnqElem;
+		
+	}
+	
 	/// ************************************Java 8 : Arrays - Duplicates & Smallest
 	/// Integers Solution *****************************************///
 

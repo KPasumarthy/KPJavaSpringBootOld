@@ -17,14 +17,14 @@ public class KPMRTest {
 		// TODO Auto-generated method stub
 		// Eliminate Repetitions
 		int A[] = { 3, 2, 3, 2, 3, 2, 5, 7, 3, 2 };
-		int sumUnqElem = getUniqueElements(A);
+		int sumUnqElem = getSumOfUniqueElements(A);
 		System.out.println("The Sum of Non-Duplicate & Non-Repetitive Unique Elements : " + sumUnqElem);
 
 	}
 
-	public static int getUniqueElements(int[] A) {
+	public static int getSumOfUniqueElements(int[] A) {
 		// Trial : 1 - Ramani.Mukesh@gmail.com
-		System.out.println("KP : Java Interview Test");
+		System.out.println("KP : Java Interview Test : getSumOfUniqueElements");
 
 		HashMap hm = new HashMap();
 		HashSet hs = new HashSet();
