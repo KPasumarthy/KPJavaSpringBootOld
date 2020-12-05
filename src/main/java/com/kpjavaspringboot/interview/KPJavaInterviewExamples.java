@@ -1,5 +1,6 @@
 package com.kpjavaspringboot.interview;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -8,6 +9,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.SortedSet;
+import java.util.TreeSet;
+
+import javax.swing.text.Element;
 
 //import com.kpjavaspringboot.KPJavaSpringBootApplication.NestedStaticClass;
 
@@ -134,10 +139,30 @@ public class KPJavaInterviewExamples {
 		IKMTest(S);
 		/// KP : Q&A : 12 - LKM Test : Q&A
 	}
+
+	
+
+	/*******************************************
+	 * Java 8 : IKM Test 
+	 ********************************************/
+	/*******************************************
+	 * Java 8 : IKM Test 
+	 ********************************************/
+	/*Java Class Constructors*/
+	public KPJavaInterviewExamples() {
+		this(10);
+	}
+		
+	public KPJavaInterviewExamples(int data) {
+		// TODO Auto-generated constructor stub
+		this.data = data;
+	}
+	
 	
 	public static void IKMTest(String... s) {
 		System.out.println("\t Input Array - s[] : " + Arrays.toString(s)  + ",  s[1] : " + s[1] + ",  s[2] : " + s[2] + ", s[3] : " + s[3] );
 		
+		/* //KP : IKM Test 1 */
 		System.out.println("\t ArrayList() Print Sequence : What is the sequence of letter printed ? ");
 		List<String> lst = new ArrayList<String>();
 		lst.add("1");
@@ -148,7 +173,74 @@ public class KPJavaInterviewExamples {
 		lst.forEach(System.out::print);
 		
 		
+		/* //KP : IKM Test 2 */
+		//Display()
+		int data = 0;
+		KPJavaInterviewExamples t = new KPJavaInterviewExamples();
+		t.display();
+		System.out.println("\t IKMTest - data = " + data);
+		
+		//HElper
+		Helper h = new Helper();
+		int d = 2;
+		h.bump(d);
+		System.out.println("\t IKMTest - h.d : " + h.d + " d : "+ d);
+				
 	}
+	
+	
+	/*Java Main() Class Constructors*/
+	public int data;
+	public SortedSet<Element> s = new TreeSet<Element>();
+	MyOtherClass myOC = new 	MyOtherClass();
+	File aF;
+		
+	static class Helper{
+		private int d = 5;
+		public void bump(int inc) {
+			inc++;
+			d = d + inc;
+		}
+
+	}
+	/*Java Main() Class Constructors*/
+	
+
+
+	public void display () {
+		// TODO Auto-generated constructor stu
+		class Decrement{
+			public void decrement() {		
+				data--;
+			}
+		}
+		Decrement d = new Decrement();
+		d.decrement();
+		System.out.println("KP : Test - data = " + data);
+	}
+	/*Java Class Constructors*/
+	
+
+	/*Java Class Generics */
+	public int getClient(List<Number> myparm) {
+		return 0;
+	}
+		
+	public int getClient1(List<?  extends Number> myparm) {
+		return 0;
+	}
+		
+	public int getClient2(List<? extends Number> myparm) {
+		return 0;
+	}
+	/*Java Class Generics */
+
+
+	/*******************************************
+	 * Java 8 : IKM Test 
+	 ********************************************/
+	
+
 	
 
 	/*******************************************
