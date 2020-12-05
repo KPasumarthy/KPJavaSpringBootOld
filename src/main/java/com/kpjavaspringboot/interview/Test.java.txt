@@ -1,0 +1,101 @@
+package com.kpjavaspringboot.interview;
+
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
+import java.util.stream.IntStream;
+
+import com.kpjavaspringboot.interview.KPJavaInterviewExamples.Animal;
+import com.kpjavaspringboot.interview.KPJavaInterviewExamples.Automobile;
+import com.kpjavaspringboot.interview.KPJavaInterviewExamples.BiCycle;
+import com.kpjavaspringboot.interview.KPJavaInterviewExamples.Car;
+import com.kpjavaspringboot.interview.KPJavaInterviewExamples.Card;
+import com.kpjavaspringboot.interview.KPJavaInterviewExamples.CreditCard;
+import com.kpjavaspringboot.interview.KPJavaInterviewExamples.DebitCard;
+import com.kpjavaspringboot.interview.KPJavaInterviewExamples.LivingBeing;
+import com.kpjavaspringboot.interview.KPJavaInterviewExamples.NestedStaticClass;
+import com.kpjavaspringboot.interview.KPJavaInterviewExamples.Pig;
+import com.kpjavaspringboot.interview.KPJavaInterviewExamples.Piglet;
+import com.kpjavaspringboot.interview.KPJavaInterviewExamples.Truck;
+import com.kpjavaspringboot.interview.KPJavaInterviewExamples.Vehicle;
+
+public class Test {
+	public static void main(String[] args) {
+		System.out.println("KP : Mastercard Test");
+		
+		int n = 2;
+		
+		//KP : Indegineous Solution : 
+		//GenerateNParentheses(n);
+		
+		//KP : Solution Availabe on Internet : https://leetcode.com/problems/generate-parentheses/solution/
+		List<String> lst = generateParenthesis(n);
+		System.out.println(lst.toString());
+				
+	}
+
+    public static List<String> generateParenthesis(int n) {
+        List<String> combinations = new ArrayList();
+        generateAll(new char[2 * n], 0, combinations);
+        return combinations;
+    }
+
+    public static void generateAll(char[] current, int pos, List<String> result) {
+        if (pos == current.length) {
+            if (valid(current))
+                result.add(new String(current));
+        } else {
+            current[pos] = '(';
+            generateAll(current, pos+1, result);
+            current[pos] = ')';
+            generateAll(current, pos+1, result);
+        }
+    }
+    
+    public static boolean valid(char[] current) {
+        int balance = 0;
+        for (char c: current) {
+            if (c == '(') balance++;
+            else balance--;
+            if (balance < 0) return false;
+        }
+        return (balance == 0);
+    }
+	
+	public static void  GenerateNParentheses(int n) {
+		/*	
+		Given 'n' pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
+		
+		Example 1:
+		Input: n = 3
+		Output: ["((()))","(()())","(())()","()(())","()()()"]
+		
+		()(())    (()(() ) )
+		
+		Example 2:
+		Output: ["(())", "()()"]
+		
+		Input: n = 1
+		Output: ["()"]
+		
+		*/
+		
+		for (int i = 0; i<n; i++) {
+			System.out.print("(");
+			GenerateNParentheses(i);
+			System.out.print(")");
+		}
+		
+	}
+
+	
+}
+

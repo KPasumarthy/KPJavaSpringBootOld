@@ -11,43 +11,45 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Entity
-//@Table(name="city")
-public class Card {
+@Table(name="country")
+public class Country {
 
-	@Id
-    int id = 0;
+	//@Id
+    //int id = 0;
+	
+	@Column(name="Code")
+    String code = ""; 
 	
 	@Column(name="Name")
     String name = "";   
 	
-    @Column(name="CountryCode")
-    String countryCode = "";
+    @Column(name="Continent")
+    String continent = "";
     
-    @Column(name="District")
-    String disrtict = "";	
+    @Column(name="Region")
+    String region = "";	
     
     @Column(name="Population")
     Integer population = 0;
             
-	public Card() {
+	public Country() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 			
-	public Card(int id, String name, String countryCode, String disrtict, Integer population) {
+	public Country(String code, String name, String continent, String region, Integer population) {
 		super();
-		this.id = id;
+		this.code = code;
 		this.name = name;
-		this.countryCode = countryCode;
-		this.disrtict = disrtict;
+		this.continent = continent;
+		this.region = region;
 		this.population = population;
 	}
 
-
 	public void display() {
-		System.out.println("KP : KPJavaSpringBootApplication - @Component : City Model - display()");
+		System.out.println("KP : KPJavaSpringBootApplication - @Component : Continent Model - display()");
 	}
-
+/*
 	public int getId() {
 		return id;
 	}
@@ -59,26 +61,27 @@ public class Card {
 	public String getName() {
 		return name;
 	}
-
+*/
 	public void setName(String name) {
 		this.name = name;
 	}
 
-	public String getCountryCode() {
-		return countryCode;
+	public String getContinent() {
+		return continent;
 	}
 
-	public void setCountryCode(String countryCode) {
-		this.countryCode = countryCode;
+	public void setContinent(String continent) {
+		this.continent = continent;
+	}
+		
+	public String getRegion() {
+		return region;
 	}
 
-	public String getDisrtict() {
-		return disrtict;
+	public void setRegion(String region) {
+		this.region = region;
 	}
 
-	public void setDisrtict(String disrtict) {
-		this.disrtict = disrtict;
-	}
 
 	public Integer getPopulation() {
 		return population;

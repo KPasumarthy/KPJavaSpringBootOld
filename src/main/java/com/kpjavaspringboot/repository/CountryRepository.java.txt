@@ -1,0 +1,17 @@
+package com.kpjavaspringboot.repository;
+
+import org.springframework.boot.autoconfigure.data.jpa.*;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import com.kpjavaspringboot.model.Country;
+
+//@Repository
+//@Repository("CountryRepository")
+//public interface CityRepository extends JpaRepository<Country, Integer> {
+//}
+
+@Repository
+public interface CountryRepository extends CrudRepository<Country, String> {
+}

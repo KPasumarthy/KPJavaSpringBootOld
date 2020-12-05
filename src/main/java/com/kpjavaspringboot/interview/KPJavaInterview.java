@@ -42,7 +42,74 @@ public class KPJavaInterview {
 		allStringPermute(str);
 		//Java 8 : All Permutations of a Java String
 		
+		// Java 8 : Print Even & Odd Numbers 
+		printOddsNEvens(0, 100);
+		// Java 8 : Print Even & Odd Numbers 
+		
+		
+		// Java 8 : Find a Number in an Array
+		int[] A = { 1, 3, 2, 4, 2, 2, 4, 5, 6, 7, 2, 3, 1, 1, 3, 3, 2 };
+		findANumber(2, A);
+		// Java 8 : Find a Number in an Array
 	}
+	
+	
+	/*******************************************
+	 * Java 8 : Find a Number in an Array 
+	********************************************/
+
+	// Java program to find a number in an array
+	public static boolean findANumber(int n, int[] A) {
+
+		System.out.println("KP : KPJavaInterview - findANumber()");
+		for ( int a : A ) {
+			if (n == a) {
+				System.out.printf("\t Number %d found in Array : " +  Arrays.toString(A), n);
+				return true;
+			}
+		}
+		
+		return false;
+		
+	}
+	
+	/*******************************************
+	 * Java 8 : Find a Number in an Array 
+	********************************************/	
+	
+	
+	/*******************************************
+	 * Java 8 : Print Even & Odd Numbers 
+	********************************************/
+
+	// Java program to print all Odd and Even
+	public static void printOddsNEvens(int l, int r) {
+
+		System.out.println("KP : KPJavaInterview - printOddsNEvens()");
+		int n = l;
+		while (n <= r) {
+			if (n == 0) {
+				System.out.println("\t Composite Neither Even Nor Odd : " + n);
+			}
+			else {
+				if ( n % 2 == 0)
+					System.out.println("\t Even : " + n);
+				
+				if (n % 2 != 0)
+					System.out.println("\t Odd  : " + n);
+			}
+			
+			n++;
+		}
+		
+	}
+	
+	/*******************************************
+	 * Java 8 : Print Even & Odd Numbers 
+	********************************************/	
+	
+	
+	
 
 	/*******************************************
 	 * Java 8 : All Permutations of a Java String
@@ -52,6 +119,8 @@ public class KPJavaInterview {
 	// given string.
 	public static void allStringPermute(String str) {
 
+		System.out.println("KP : KPJavaInterview - allStringPermutes() : " + str);
+		
 		// String str = "XYZ";
 		int n = str.length();
 		permute(str, 0, n - 1);
@@ -66,7 +135,7 @@ public class KPJavaInterview {
 	 */
 	private static void permute(String str, int l, int r) {
 		if (l == r)
-			System.out.println(str);
+			System.out.println("\t" + str);
 		else {
 			for (int i = l; i <= r; i++) {
 				str = swap(str, l, i);

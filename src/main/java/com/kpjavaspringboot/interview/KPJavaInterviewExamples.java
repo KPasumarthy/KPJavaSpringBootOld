@@ -1,15 +1,21 @@
 package com.kpjavaspringboot.interview;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 //import com.kpjavaspringboot.KPJavaSpringBootApplication.NestedStaticClass;
 
 public class KPJavaInterviewExamples {
+
+	public static void main(String[] args) {
+		getInterviewQuestions();		
+	}
 
 	public static void getInterviewQuestions() {
 
@@ -23,7 +29,7 @@ public class KPJavaInterviewExamples {
 		byte b = 10;
 		b = (byte) (b + 1);
 		System.out.println(
-				"Value of the 'byte' type variable 'b' resulting in operation cast 'addition' operation? \n" + b);
+				"\t Value of the 'byte' type variable 'b' resulting in operation cast 'addition' operation? \n \t" + b);
 		/// KP : Q&A : 1 - Can we add a variable of datatype 'byte'? What will happen if
 
 		//// KP : Q&A : 2 - Can We declare a Top Level Class as Static in Java?
@@ -101,13 +107,12 @@ public class KPJavaInterviewExamples {
 		/// KP : Q&A : 8 - Compute Factorial Recursively : Q&A
 		ComputeFactorial();
 		/// KP : Q&A : 8 - Compute Factorial Recursively : Q&A
-		
+
 		/// KP : Q&A : 9- All Permutations of a Java String
-		String str = "ABCDEF"; ///"XYZ"
+		String str = "ABCDEF"; /// "XYZ"
 		allStringPermute(str);
 		/// KP : Q&A : 9 - All Permutations of a Java String
-			
-		
+
 		/// KP : Q&A : 10 - Return Duplicate (or) Repetitive Elements : Q&A
 		// Eliminate Repetitions
 		// int A[] = { 3, 2, 3, 2, 3, 2, 5, 7, 3, 2 };
@@ -118,9 +123,33 @@ public class KPJavaInterviewExamples {
 		getSumOfUniqueElements(A);
 		getSmallestPositiveInteger(A);
 		/// KP : Q&A : 10 - Compute Factorial Recursively : Q&A
+
+		/// KP : Q&A : 11 - Mastercard Recursion & Permute Test : Q&A
+		masterCardInterviewTest();
+		/// KP : Q&A : 11 - Mastercard Recursion & Permute Test : Q&A
+		
+		/// KP : Q&A : 12 - IKM Test : Q&A
+		System.out.println("KP : IKMTest ");
+		String[] S = { "-7", "-11", "-3", "100", "90", "625" };
+		IKMTest(S);
+		/// KP : Q&A : 12 - LKM Test : Q&A
+	}
+	
+	public static void IKMTest(String... s) {
+		System.out.println("\t Input Array - s[] : " + Arrays.toString(s)  + ",  s[1] : " + s[1] + ",  s[2] : " + s[2] + ", s[3] : " + s[3] );
+		
+		System.out.println("\t ArrayList() Print Sequence : What is the sequence of letter printed ? ");
+		List<String> lst = new ArrayList<String>();
+		lst.add("1");
+		lst.add("2");
+		lst.add(0, "3");
+		lst.add(1, "4");
+		System.out.print("\t ArrayList() Print Sequence : " );
+		lst.forEach(System.out::print);
 		
 		
 	}
+	
 
 	/*******************************************
 	 * Java 8 : Factorial : Recursion
@@ -164,8 +193,8 @@ public class KPJavaInterviewExamples {
 	// given string.
 	public static void allStringPermute(String str) {
 
-		System.out.println("KP : KPJavaInterview : Hello : Permute a String '" + str + "'" );
-		
+		System.out.println("KP : KPJavaInterview : Hello : Permute a String '" + str + "'");
+
 		// String str = "XYZ";
 		int n = str.length();
 		permute(str, 0, n - 1);
@@ -180,7 +209,7 @@ public class KPJavaInterviewExamples {
 	 */
 	private static void permute(String str, int l, int r) {
 		if (l == r)
-			System.out.print("\t"+ str);
+			System.out.print("\t" + str);
 		else {
 			for (int i = l; i <= r; i++) {
 				str = swap(str, l, i);
@@ -210,9 +239,7 @@ public class KPJavaInterviewExamples {
 	/*******************************************
 	 * Java 8 : All Permutations of a Java String
 	 *******************************************/
-	
-	
-	
+
 	/*******************************************
 	 * Java 8 : isPalindrome : Check a Variable?
 	 *******************************************/
@@ -234,7 +261,7 @@ public class KPJavaInterviewExamples {
 
 	public static boolean isPalindrome(String str) {
 
-		System.out.printf("Input Variable : '%s' \n", str);
+		System.out.printf("\t Input Variable : '%s' \n", str);
 
 		// Pointers pointing to the beginning
 		// and the end of the string
@@ -261,7 +288,7 @@ public class KPJavaInterviewExamples {
 
 	public static boolean isPalindromeCaseSensitive(String str, boolean ignoreCase) {
 
-		System.out.printf("Input Variable : '%s'. Ignore Case : '%b' \n", str, ignoreCase);
+		System.out.printf("\t Input Variable : '%s'. Ignore Case : '%b' \n", str, ignoreCase);
 
 		// Pointers pointing to the beginning
 		// and the end of the string
@@ -393,18 +420,14 @@ public class KPJavaInterviewExamples {
 		// int[] A = { -7, -11, -3 };
 		int[] A = { -7, -11, -3, 1, 3, 0, 0, 0, 9, 7, 8, 6, 4, 1, 2, 2, -100, 90, 98, 625 };
 
-		/// KP : Get Duplicates Array
-		// int[] dup = getDuplicateInteger(A);
-		// System.out.println("KP : KPJavaInterview - com.kpjavaspringboot : Duplicate
-		/// Positive Integer : " + dup);
-
+		/// KP : Get Smallest Positive Integer
 		int val = getSmallestPositiveInteger(A);
 		System.out.println("KP : KPJavaInterview -  com.kpjavaspringboot : Smallest Positive Integer : " + val);
 
 	}
 
 	public static void getUniqueElements(int[] A) {
-		// Trial : 1 - Ramani.Mukesh@gmail.com
+
 		System.out.println("KP : Java Interview Test : getUniqueElements()");
 
 		HashMap hm = new HashMap();
@@ -427,10 +450,10 @@ public class KPJavaInterviewExamples {
 			}
 
 		}
-		System.out.println("The Input Array : " + Arrays.toString(A));
+		System.out.println("\t The Input Array : " + Arrays.toString(A));
 		Arrays.sort(A);
-		System.out.println("The Sorted Input Array : " + Arrays.toString(A));
-		System.out.println("The HashMap : " + hm);
+		System.out.println("\t The Sorted Input Array : " + Arrays.toString(A));
+		System.out.println("\t The HashMap : " + hm);
 
 		// Remove Duplicates & Repetitions
 		// Getting an iterator
@@ -454,7 +477,7 @@ public class KPJavaInterviewExamples {
 			}
 		}
 
-		System.out.println("Unique HashMap : " + hm);
+		System.out.println("\t Unique HashMap : " + hm);
 		System.out.println("\t HashSet: " + hs);
 		System.out.println("\t Non-Duplicate Unique HashSet : " + hsUnq);
 		System.out.println("\t Duplicate & Repetitive HashSet : " + hsRep);
@@ -467,7 +490,7 @@ public class KPJavaInterviewExamples {
 			dupArr[i++] = (int) a;
 		}
 		Arrays.sort(dupArr);
-		System.out.println("Array - Repetitive-Duplicate Elements : " + Arrays.toString(dupArr));
+		System.out.println("\t Array - Repetitive-Duplicate Elements : " + Arrays.toString(dupArr));
 
 		//// Creating an Integer Array of Non-Repetitive Elements
 		int[] unqArr = new int[hsUnq.size()];
@@ -476,7 +499,7 @@ public class KPJavaInterviewExamples {
 			unqArr[i++] = (int) a;
 		}
 		Arrays.sort(unqArr);
-		System.out.println("Array - Non-Duplicate Unique Elements : " + Arrays.toString(unqArr));
+		System.out.println("\t Array - Non-Duplicate Unique Elements : " + Arrays.toString(unqArr));
 
 	}
 
@@ -500,9 +523,6 @@ public class KPJavaInterviewExamples {
 
 		System.out.println("KP : KPJavaInterview -  com.kpjavaspringboot : getDuplicateInteger(int[] A)");
 
-		// Trial : 1 - Ramani.Mukesh@gmail.com
-		System.out.println("KP : Java Interview Test : getUniqueElements()");
-
 		HashMap hm = new HashMap();
 		HashSet hs = new HashSet();
 		int i = 0;
@@ -523,10 +543,10 @@ public class KPJavaInterviewExamples {
 			}
 
 		}
-		System.out.println("The Input Array : " + Arrays.toString(A));
+		System.out.println("\t The Input Array : " + Arrays.toString(A));
 		Arrays.sort(A);
-		System.out.println("The Sorted Input Array : " + Arrays.toString(A));
-		System.out.println("The HashMap : " + hm);
+		System.out.println("\t The Sorted Input Array : " + Arrays.toString(A));
+		System.out.println("\t The HashMap : " + hm);
 
 		// Remove Duplicates & Repetitions
 		// Getting an iterator
@@ -550,7 +570,7 @@ public class KPJavaInterviewExamples {
 			}
 		}
 
-		System.out.println("Unique HashMap : " + hm);
+		System.out.println("\t Unique HashMap : " + hm);
 		System.out.println("\t HashSet: " + hs);
 		System.out.println("\t Non-Duplicate Unique HashSet : " + hsUnq);
 		System.out.println("\t Duplicate & Repetitive HashSet : " + hsRep);
@@ -563,7 +583,7 @@ public class KPJavaInterviewExamples {
 			dupArr[i++] = (int) a;
 		}
 		Arrays.sort(dupArr);
-		System.out.println("Array - Repetitive-Duplicate Elements : " + Arrays.toString(dupArr));
+		System.out.println("\t Array - Repetitive-Duplicate Elements : " + Arrays.toString(dupArr));
 
 		//// Creating an Integer Array of Non-Repetitive Elements
 		int[] unqArr = new int[hsUnq.size()];
@@ -572,7 +592,7 @@ public class KPJavaInterviewExamples {
 			unqArr[i++] = (int) a;
 		}
 		Arrays.sort(unqArr);
-		System.out.println("Array - Non-Duplicate Unique Elements : " + Arrays.toString(unqArr));
+		System.out.println("\t Array - Non-Duplicate Unique Elements : " + Arrays.toString(unqArr));
 
 		return dupArr;
 	}
@@ -581,9 +601,6 @@ public class KPJavaInterviewExamples {
 
 		System.out.println("KP : KPJavaInterview -  com.kpjavaspringboot : getUniqueNonDuplicateArray(int[] A)");
 
-		// Trial : 1 - Ramani.Mukesh@gmail.com
-		System.out.println("KP : Java Interview Test : getUniqueElements()");
-
 		HashMap hm = new HashMap();
 		HashSet hs = new HashSet();
 		int i = 0;
@@ -604,10 +621,10 @@ public class KPJavaInterviewExamples {
 			}
 
 		}
-		System.out.println("The Input Array : " + Arrays.toString(A));
+		System.out.println("\t The Input Array : " + Arrays.toString(A));
 		Arrays.sort(A);
-		System.out.println("The Sorted Input Array : " + Arrays.toString(A));
-		System.out.println("The HashMap : " + hm);
+		System.out.println("\t The Sorted Input Array : " + Arrays.toString(A));
+		System.out.println("\t The HashMap : " + hm);
 
 		// Remove Duplicates & Repetitions
 		// Getting an iterator
@@ -631,7 +648,7 @@ public class KPJavaInterviewExamples {
 			}
 		}
 
-		System.out.println("Unique HashMap : " + hm);
+		System.out.println("\t Unique HashMap : " + hm);
 		System.out.println("\t HashSet: " + hs);
 		System.out.println("\t Non-Duplicate Unique HashSet : " + hsUnq);
 		System.out.println("\t Duplicate & Repetitive HashSet : " + hsRep);
@@ -644,7 +661,7 @@ public class KPJavaInterviewExamples {
 			dupArr[i++] = (int) a;
 		}
 		Arrays.sort(dupArr);
-		System.out.println("Array - Repetitive-Duplicate Elements : " + Arrays.toString(dupArr));
+		System.out.println("\t Array - Repetitive-Duplicate Elements : " + Arrays.toString(dupArr));
 
 		//// Creating an Integer Array of Non-Repetitive Elements
 		int[] unqArr = new int[hsUnq.size()];
@@ -653,13 +670,13 @@ public class KPJavaInterviewExamples {
 			unqArr[i++] = (int) a;
 		}
 		Arrays.sort(unqArr);
-		System.out.println("Array - Non-Duplicate Unique Elements : " + Arrays.toString(unqArr));
+		System.out.println("\t Array - Non-Duplicate Unique Elements : " + Arrays.toString(unqArr));
 
 		return unqArr;
 	}
 
 	public static int getSumOfUniqueElements(int[] A) {
-		// Trial : 1 - Ramani.Mukesh@gmail.com
+
 		System.out.println("KP : Java Interview Test : getSumOfUniqueElements");
 
 		HashMap hm = new HashMap();
@@ -670,11 +687,11 @@ public class KPJavaInterviewExamples {
 			if (hm.get(a) == null) {
 				i = 0;
 				hm.put(a, ++i);
-				//System.out.printf("HM : a=%d, i=%d \n", a, i);
+				// System.out.printf("HM : a=%d, i=%d \n", a, i);
 			} else {
 				i = (int) hm.get(a);
 				hm.put(a, ++i);
-				//System.out.printf("HM : a=%d, i=%d \n", a, i);
+				// System.out.printf("HM : a=%d, i=%d \n", a, i);
 			}
 
 			if (!hs.contains(a)) {
@@ -682,10 +699,10 @@ public class KPJavaInterviewExamples {
 			}
 
 		}
-		System.out.println("The Input Array : " + Arrays.toString(A));
+		System.out.println("\t The Input Array : " + Arrays.toString(A));
 		Arrays.sort(A);
-		System.out.println("The Input Array : " + Arrays.toString(A));
-		System.out.println("The HashMap : " + hm);
+		System.out.println("\t The Input Array : " + Arrays.toString(A));
+		System.out.println("\t The HashMap : " + hm);
 
 		// Remove Duplicates & Repetitions
 		// Getting an iterator
@@ -697,28 +714,28 @@ public class KPJavaInterviewExamples {
 		while (hmIterator.hasNext()) {
 			Map.Entry mapElement = (Map.Entry) hmIterator.next();
 			int value = ((int) mapElement.getValue());
-			//System.out.println( "The HashMapElement : Key =  " + mapElement.getKey() + " Value = " + mapElement.getValue());
+			// System.out.println( "The HashMapElement : Key = " + mapElement.getKey() + "
+			// Value = " + mapElement.getValue());
 
 			if (value == 1) {
-				
+
 				hsUnq.add(mapElement.getKey());
-				sumUnqElem += (int)mapElement.getKey();
+				sumUnqElem += (int) mapElement.getKey();
 			} else {
 				hsRep.add(mapElement.getKey());
 			}
 		}
 
-		System.out.println("The Unique HashMap : " + hm);
-		System.out.println("The HashSet: " + hs);
-		System.out.println("The Non-Duplicate Unique HashSet : " + hsUnq);
-		System.out.println("The Duplicate & Repetitive HashSet : " + hsRep);
-		System.out.println("The Sum of Duplicate & Repetitive Unique Elements : " + sumUnqElem);
-		System.out.println("The Sum of Non-Duplicate & Non-Repetitive Unique Elements : " + sumUnqElem);
-		
+		System.out.println("\t The Unique HashMap : " + hm);
+		System.out.println("\t The HashSet: " + hs);
+		System.out.println("\t The Non-Duplicate Unique HashSet : " + hsUnq);
+		System.out.println("\t The Duplicate & Repetitive HashSet : " + hsRep);
+		System.out.println("\t The Sum of Non-Duplicate & Non-Repetitive Unique Elements : " + sumUnqElem);
+
 		return sumUnqElem;
-		
+
 	}
-	
+
 	/// ************************************Java 8 : Arrays - Duplicates & Smallest
 	/// Integers Solution *****************************************///
 
@@ -953,6 +970,132 @@ public class KPJavaInterviewExamples {
 		}
 	}
 	/// ************************************Java Static & Nested Sub-Classes
+	/// *****************************************///
+
+	/// ************************************Java MasterCard Interview Test
+	/// *****************************************///
+
+	public static void masterCardInterviewTest() {
+		System.out.println("KP : Mastercard  Interview - Matching Paranthesis Test");
+
+		int n = 3;
+
+		// KP : Indegineous Solution :
+		// GenerateNParentheses(n);
+
+		// KP : Solution Available on Internet :
+		// https://leetcode.com/problems/generate-parentheses/solution/
+		/*** KP : Brute Force ***/
+		List<String> lst = generateParenthesis(n);
+		System.out.println("\t Brute Force : " + lst.toString());
+		/*** KP : Brute Force ***/
+
+		/*** KP : Back Tracking ***/
+		List<String> lstBtrk = generateParenthesisBackTracking(n);
+		System.out.println("\t Back Tracking : " + lstBtrk.toString());
+		/*** KP : Back Tracking ***/
+
+		/*** KP : Closure Number ***/
+		List<String> lstCN = generateParenthesisClosureNumber(n);
+		System.out.println("\t Closure Number : " + lstBtrk.toString());
+		/*** KP : Closure Number ***/
+	}
+
+	/*** KP : Brute Force ***/
+	public static List<String> generateParenthesis(int n) {
+		List<String> combinations = new ArrayList();
+		generateAll(new char[2 * n], 0, combinations);
+		return combinations;
+	}
+
+	public static void generateAll(char[] current, int pos, List<String> result) {
+		if (pos == current.length) {
+			if (valid(current))
+				result.add(new String(current));
+		} else {
+			current[pos] = '(';
+			generateAll(current, pos + 1, result);
+			current[pos] = ')';
+			generateAll(current, pos + 1, result);
+		}
+	}
+
+	public static boolean valid(char[] current) {
+		int balance = 0;
+		for (char c : current) {
+			if (c == '(')
+				balance++;
+			else
+				balance--;
+			if (balance < 0)
+				return false;
+		}
+		return (balance == 0);
+	}
+
+	public static void GenerateNParentheses(int n) {
+		/*
+		 * Given 'n' pairs of parentheses, write a function to generate all combinations
+		 * of well-formed parentheses.
+		 * 
+		 * Example 1: Input: n = 3 Output:
+		 * ["((()))","(()())","(())()","()(())","()()()"]
+		 * 
+		 * ()(()) (()(() ) )
+		 * 
+		 * Example 2: Output: ["(())", "()()"]
+		 * 
+		 * Input: n = 1 Output: ["()"]
+		 * 
+		 */
+
+		for (int i = 0; i < n; i++) {
+			System.out.print("(");
+			GenerateNParentheses(i);
+			System.out.print(")");
+		}
+
+	}
+
+	/*** KP : Brute Force ***/
+
+	/*** KP : Back Tracking ***/
+	public static List<String> generateParenthesisBackTracking(int n) {
+		List<String> ans = new ArrayList();
+		backtrack(ans, "", 0, 0, n);
+		return ans;
+	}
+
+	public static void backtrack(List<String> ans, String cur, int open, int close, int max) {
+		if (cur.length() == max * 2) {
+			ans.add(cur);
+			return;
+		}
+
+		if (open < max)
+			backtrack(ans, cur + "(", open + 1, close, max);
+		if (close < open)
+			backtrack(ans, cur + ")", open, close + 1, max);
+	}
+
+	/*** KP : Back Tracking ***/
+
+	/*** KP : Closure Number ***/
+	public static List<String> generateParenthesisClosureNumber(int n) {
+		List<String> ans = new ArrayList();
+		if (n == 0) {
+			ans.add("");
+		} else {
+			for (int c = 0; c < n; ++c)
+				for (String left : generateParenthesisClosureNumber(c))
+					for (String right : generateParenthesis(n - 1 - c))
+						ans.add("(" + left + ")" + right);
+		}
+		return ans;
+	}
+	/*** KP : Closure Number ***/
+
+	/// ************************************Java MasterCard Interview Test
 	/// *****************************************///
 
 }
