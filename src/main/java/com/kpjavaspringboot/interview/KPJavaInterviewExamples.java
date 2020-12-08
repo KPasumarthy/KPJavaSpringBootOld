@@ -1,6 +1,7 @@
 package com.kpjavaspringboot.interview;
 
 import java.io.File;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -15,6 +16,12 @@ import java.util.TreeSet;
 import javax.swing.text.Element;
 
 //import com.kpjavaspringboot.KPJavaSpringBootApplication.NestedStaticClass;
+
+
+class MyOtherClass {
+	MyOtherClass(){}
+	FileReader aRd;
+}
 
 public class KPJavaInterviewExamples {
 
@@ -138,6 +145,11 @@ public class KPJavaInterviewExamples {
 		String[] S = { "-7", "-11", "-3", "100", "90", "625" };
 		IKMTest(S);
 		/// KP : Q&A : 12 - LKM Test : Q&A
+		
+		/// KP : Q&A : 13 - CapitalOne Test : Q&A
+		//Print a file directory: we have a file directory class:
+		printDirNSubDirContents();
+		//// KP : Q&A : 13 - CapitalOne Test : Q&A			
 	}
 
 	
@@ -1064,6 +1076,74 @@ public class KPJavaInterviewExamples {
 	/// ************************************Java Static & Nested Sub-Classes
 	/// *****************************************///
 
+	
+	/// ************************************Java Capital One Interview Test
+	/// *****************************************///
+
+	
+	/* 
+	Print a file directory: we have a file directory class:
+		test
+		├── test-a1.log
+		├── test-a2.log
+		└── test-b
+		    ├── test-b1.txt
+		    ├── test-b2.txt
+		    ├── test-c
+		    │   ├── test-c1.log
+		    │   └── test-c2.log
+		    └── test-d
+		        ├── test-d1.log
+		        └── test-d2.log
+		class FileDir {
+		    String type; //File or Dir 
+		    String name;
+		    List subDir;
+		}
+
+	 */
+	public static void printDirNSubDirContents() {
+		System.out.println("KP : Print Contents of File Directory & Sub-Directory contents: ");	
+		
+		String pwd = System.getProperty("user.dir");
+		File rootDir = new File(pwd);
+		System.out.println("\t Root Directory : " + rootDir.toString());
+		rootDir = new File("C:\\Users\\admin\\eclipse-workspace\\KPJavaSpringBoot\\src");
+		
+		
+		File arr[] = rootDir.listFiles();
+		//System.out.println("Files : " + Arrays.toString(arr));
+		recursiveDirPrint(arr);
+		
+	}	
+	
+	public static void recursiveDirPrint(File arr[]) {
+		
+		String str = new String("\t");
+		for (File path : arr ) {
+			
+			//System.out.println("Path : " + path.toPath());
+			
+			if (path.isFile()) {
+				//System.out.println("\t File Path : " + path.toPath());
+				System.out.println(str + path.toPath());
+			}
+			
+			if (path.isDirectory()) {
+				//System.out.println("\t Directory Path : " + path.toPath());
+				System.out.println(str + path.toPath());
+				str += "\t";
+				File arrSub[] = path.listFiles();
+				recursiveDirPrint(arrSub);
+			} 
+			//str += "\t";
+		}
+	}
+	/// ************************************Java Capital One Interview Test
+	/// *****************************************///
+
+	
+	
 	/// ************************************Java MasterCard Interview Test
 	/// *****************************************///
 

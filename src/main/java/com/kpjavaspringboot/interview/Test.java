@@ -7,14 +7,16 @@ import java.util.*;
 
 import javax.swing.text.Element;
 
-class MyOtherClass {
-	MyOtherClass(){}
-	FileReader aRd;
+class MyTestClass {
+	MyTestClass(){}
 }
 
 public class Test {
 	
 	public static void main(String[] args) {
 		System.out.println("KP : Test");	
-	}	
+		
+	}
 }
+
+
