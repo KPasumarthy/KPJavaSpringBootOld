@@ -2,8 +2,10 @@ package com.kpjavaspringboot.interview;
 
 import java.io.File;
 import java.io.FileReader;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Deque;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -150,13 +152,86 @@ public class KPJavaInterviewExamples {
 		//Print a file directory: we have a file directory class:
 		printDirNSubDirContents();
 		//// KP : Q&A : 13 - CapitalOne Test : Q&A			
+		
+		/// KP : Q&A : 14 - CapitalOne Test : Q&A
+		BubbleSortAlgorithm();
+		/// KP : Q&A : 14 - CapitalOne Test : Q&A
+		
+		/// KP : Q&A : 15 - BalanceParantheses Test : Q&A
+		BalanceParantheses();
+		/// KP : Q&A : 14 - BalanceParantheses Test : Q&A
+		
+		
 	}
-
+	
+	
+	/*******************************************
+	 * Java 8 : Balance Parentheses
+	 ********************************************/
+	
+	public static void BalanceParantheses() {
+		System.out.println("KP : Balance Parentheses ");	
+		String input = "{{]][]]}}";
+		
+		boolean result = isBalanceParantheses(input);
+		System.out.println("\t Input String " + input + " Balanced  : " +  result );	
+						
+	}
+	
+	static boolean isBalanceParantheses(String input) {
+		
+        // Using ArrayDeque is faster than using Stack class 
+        Deque<Character> stack  = new ArrayDeque<Character>(); 
+  
+        // Traversing the Expression 
+        for (int i = 0; i < input.length(); i++)  
+        { 
+            char x = input.charAt(i); 
+  
+            if (x == '(' || x == '[' || x == '{')  
+            { 
+                // Push the element in the stack 
+                stack.push(x); 
+                continue; 
+            } 
+  
+            // cannot be empty at this point. 
+            if (stack.isEmpty()) 
+                return false; 
+            char check; 
+            switch (x) { 
+            case ')': 
+                check = stack.pop(); 
+                if (check == '{' || check == '[') 
+                    return false; 
+                break; 
+  
+            case '}': 
+                check = stack.pop(); 
+                if (check == '(' || check == '[') 
+                    return false; 
+                break; 
+  
+            case ']': 
+                check = stack.pop(); 
+                if (check == '(' || check == '{') 
+                    return false; 
+                break; 
+            } 
+        } 
+  
+        // Check Empty Stack 
+        return (stack.isEmpty()); 
+  	
+		//return true;
+	}
 	
 
 	/*******************************************
-	 * Java 8 : IKM Test 
+	 * Java 8 : Balance Parentheses
 	 ********************************************/
+	
+	
 	/*******************************************
 	 * Java 8 : IKM Test 
 	 ********************************************/
@@ -253,6 +328,67 @@ public class KPJavaInterviewExamples {
 	 ********************************************/
 	
 
+	/*******************************************
+	 * Java 8 : Print Bubble Sort
+	 ********************************************/
+
+	public static void BubbleSortAlgorithm() {
+		System.out.println("KP : Test - BubbleSort() ");
+
+		/*
+		 * 
+		 * Create a function that takes integer array as input and returns integer
+		 * array. Inside the function it requires to rearrange the array elements in
+		 * such a way that all the positives and zeros are moves to left and negatives
+		 * are moved to right. This is NOT sorting. Maintain the order of positives and
+		 * negatives in the same order it is given.
+		 * 
+		 * For example: Input: [5, 3, -3, -4, 0, 2, -1, 4, -7, 2] Output: [5, 3, 0, 2,
+		 * 4, 2, -3, -4, -1, -7]
+		 * 
+		 * 
+		 */
+
+		// int[] Input = {5, 3, -3, -4, 0, 2, -1, 4, -7, 2};
+		// int[] Output = {5, 3, 0, 2, 4, 2, -3, -4, -1, -7};
+
+		int[] Input = { 5, 3, -3, -4, 0, 2, -1, 4, -7, 2 };
+		bubbleSort(Input);
+		System.out.println("\t KP : Bubble Sorted Array : " + Arrays.toString(Input));
+
+	}
+
+	// An optimized version of Bubble Sort
+	public static void bubbleSort(int arr[]) {
+
+		int n = arr.length;
+
+		int i, j, temp;
+		boolean swapped;
+		for (i = 0; i < n - 1; i++) {
+			swapped = false;
+			for (j = 0; j < n - i - 1; j++) {
+				if (arr[j] < arr[j + 1]) {
+					// swap arr[j] and arr[j+1]
+					temp = arr[j];
+					arr[j] = arr[j + 1];
+					arr[j + 1] = temp;
+					swapped = true;
+				}
+			}
+
+			// IF no two elements were
+			// swapped by inner loop, then break
+			if (swapped == false)
+				break;
+		}
+	}
+
+
+
+	/*******************************************
+	 * Java 8 : Print Bubble Sort
+	 ********************************************/
 	
 
 	/*******************************************

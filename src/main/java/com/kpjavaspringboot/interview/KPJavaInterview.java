@@ -34,53 +34,50 @@ public class KPJavaInterview {
 
 		// Lottery
 		// lotteryCoupons(12);
-		//lotteryCoupons(22);
+		// lotteryCoupons(22);
 		// addDigits(3415);
-		
+
 		// Java 8 : All Permutations of a Java String
 		String str = "ABCDEF";
 		allStringPermute(str);
-		//Java 8 : All Permutations of a Java String
-		
-		// Java 8 : Print Even & Odd Numbers 
+		// Java 8 : All Permutations of a Java String
+
+		// Java 8 : Print Even & Odd Numbers
 		printOddsNEvens(0, 100);
-		// Java 8 : Print Even & Odd Numbers 
-		
-		
+		// Java 8 : Print Even & Odd Numbers
+
 		// Java 8 : Find a Number in an Array
 		int[] A = { 1, 3, 2, 4, 2, 2, 4, 5, 6, 7, 2, 3, 1, 1, 3, 3, 2 };
 		findANumber(2, A);
 		// Java 8 : Find a Number in an Array
 	}
-	
-	
+
 	/*******************************************
-	 * Java 8 : Find a Number in an Array 
-	********************************************/
+	 * Java 8 : Find a Number in an Array
+	 ********************************************/
 
 	// Java program to find a number in an array
 	public static boolean findANumber(int n, int[] A) {
 
 		System.out.println("KP : KPJavaInterview - findANumber()");
-		for ( int a : A ) {
+		for (int a : A) {
 			if (n == a) {
-				System.out.printf("\t Number %d found in Array : " +  Arrays.toString(A), n);
+				System.out.printf("\t Number %d found in Array : " + Arrays.toString(A), n);
 				return true;
 			}
 		}
-		
+
 		return false;
-		
+
 	}
-	
+
 	/*******************************************
-	 * Java 8 : Find a Number in an Array 
-	********************************************/	
-	
-	
+	 * Java 8 : Find a Number in an Array
+	 ********************************************/
+
 	/*******************************************
-	 * Java 8 : Print Even & Odd Numbers 
-	********************************************/
+	 * Java 8 : Print Even & Odd Numbers
+	 ********************************************/
 
 	// Java program to print all Odd and Even
 	public static void printOddsNEvens(int l, int r) {
@@ -90,26 +87,84 @@ public class KPJavaInterview {
 		while (n <= r) {
 			if (n == 0) {
 				System.out.println("\t Composite Neither Even Nor Odd : " + n);
-			}
-			else {
-				if ( n % 2 == 0)
+			} else {
+				if (n % 2 == 0)
 					System.out.println("\t Even : " + n);
-				
+
 				if (n % 2 != 0)
 					System.out.println("\t Odd  : " + n);
 			}
-			
+
 			n++;
 		}
-		
+
 	}
-	
+
 	/*******************************************
-	 * Java 8 : Print Even & Odd Numbers 
-	********************************************/	
-	
-	
-	
+	 * Java 8 : Print Even & Odd Numbers
+	 ********************************************/
+
+	/*******************************************
+	 * Java 8 : Print Bubble Sort
+	 ********************************************/
+
+	public static void BubbleSortAlgorithm() {
+		System.out.println("KP : Test - BubbleSort() ");
+
+		/*
+		 * 
+		 * Create a function that takes integer array as input and returns integer
+		 * array. Inside the function it requires to rearrange the array elements in
+		 * such a way that all the positives and zeros are moves to left and negatives
+		 * are moved to right. This is NOT sorting. Maintain the order of positives and
+		 * negatives in the same order it is given.
+		 * 
+		 * For example: Input: [5, 3, -3, -4, 0, 2, -1, 4, -7, 2] Output: [5, 3, 0, 2,
+		 * 4, 2, -3, -4, -1, -7]
+		 * 
+		 * 
+		 */
+
+		// int[] Input = {5, 3, -3, -4, 0, 2, -1, 4, -7, 2};
+		// int[] Output = {5, 3, 0, 2, 4, 2, -3, -4, -1, -7};
+
+		int[] Input = { 5, 3, -3, -4, 0, 2, -1, 4, -7, 2 };
+		bubbleSort(Input);
+		System.out.println("\t KP : Bubble Sorted Array : " + Arrays.toString(Input));
+
+	}
+
+	// An optimized version of Bubble Sort
+	public static void bubbleSort(int arr[]) {
+
+		int n = arr.length;
+
+		int i, j, temp;
+		boolean swapped;
+		for (i = 0; i < n - 1; i++) {
+			swapped = false;
+			for (j = 0; j < n - i - 1; j++) {
+				if (arr[j] < arr[j + 1]) {
+					// swap arr[j] and arr[j+1]
+					temp = arr[j];
+					arr[j] = arr[j + 1];
+					arr[j + 1] = temp;
+					swapped = true;
+				}
+			}
+
+			// IF no two elements were
+			// swapped by inner loop, then break
+			if (swapped == false)
+				break;
+		}
+	}
+
+
+
+	/*******************************************
+	 * Java 8 : Print Bubble Sort
+	 ********************************************/
 
 	/*******************************************
 	 * Java 8 : All Permutations of a Java String
@@ -120,7 +175,7 @@ public class KPJavaInterview {
 	public static void allStringPermute(String str) {
 
 		System.out.println("KP : KPJavaInterview - allStringPermutes() : " + str);
-		
+
 		// String str = "XYZ";
 		int n = str.length();
 		permute(str, 0, n - 1);
