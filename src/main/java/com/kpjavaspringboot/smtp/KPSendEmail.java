@@ -3,21 +3,34 @@ package com.kpjavaspringboot.smtp;
 import java.io.File;
 import java.io.IOException;
 
-//File Name SendEmail.java
-
 import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.*;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.kpjavaspringboot.KPJavaSpringBootApplication;
+
 import javax.activation.*;
+
+
 
 public class KPSendEmail {
 
+	private static Logger logger = LoggerFactory.getLogger(KPJavaSpringBootApplication.class);
+	
 	public KPSendEmail() {
 		 // //TODO Auto-generated constructor stub
 	}
 
 	public static void main(String[] args) throws IOException {
 
+		////KP : Enable SMTP Settings on KPSendGmail
+		//https://www.google.com/settings/security/lesssecureapps : Allow less secure apps: Enable ON
+		//https://accounts.google.com/DisplayUnlockCaptcha : Continue
+		
+				
 		// Recipient's email ID needs to be mentioned.
 		String to = "KPXYZ@ReceipentsEmail.com";
 
@@ -78,9 +91,17 @@ public class KPSendEmail {
 			
 			// Send message
 			Transport.send(message);
-			System.out.println("KP : Sent Message Successfully!....");
+			
+			//Logging
+			System.out.println("KP : Sent Message Successfully!...");
+			logger.info("KP : KPJavaSpringBootApplication : KPSendEmail - SMTP Sent Message Successfully!");
+			
+			
 		} catch (MessagingException mex) {
+			//Logging
 			System.out.println("KP : Send Message Failure....");
+			logger.error("KP : KPJavaSpringBootApplication : KPSendEmail - SMTP Send Message Failure...!");
+			logger.error("KP : KPJavaSpringBootApplication : KPSendEmail - SMTP Send Message Failure", mex);
 			mex.printStackTrace();
 		}
 	}
