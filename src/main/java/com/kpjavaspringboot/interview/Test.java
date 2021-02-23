@@ -7,8 +7,6 @@ import java.util.*;
 
 import javax.swing.text.Element;
 
-
-
 class MyTestClass {
 	MyTestClass(){}
 }
