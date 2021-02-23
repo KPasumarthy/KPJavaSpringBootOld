@@ -1244,8 +1244,8 @@ public class KPJavaInterviewExamples {
 		String pwd = System.getProperty("user.dir");
 		File rootDir = new File(pwd);
 		System.out.println("\t Root Directory : " + rootDir.toString());
-		rootDir = new File("C:\\Users\\admin\\eclipse-workspace\\KPJavaSpringBoot\\src");
-		
+		//rootDir = new File("C:\\Users\\admin\\eclipse-workspace\\KPJavaSpringBoot\\src");
+		rootDir = new File(".");
 		
 		File arr[] = rootDir.listFiles();
 		//System.out.println("Files : " + Arrays.toString(arr));
