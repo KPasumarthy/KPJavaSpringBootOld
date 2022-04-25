@@ -30,10 +30,19 @@ public class KPJavaInterview {
 	public static void main(String[] args) {
 
 		// KP : Debug Print
-		System.out.println("KP : KPJavaInterview -  com.kpjavaspringboot : main()");
+		System.out.println("KP : KPJavaInterview - com.kpjavaspringboot : main()");
+
+		////Java Strings  : Immutable
+		String s1 = "Scott";
+		String s2 = "Smith";
+		s1 = s1 + s2;
+		System.out.println("KP : Java Strings Immutable : Value-Based 's1' : " + s1);
+
+		String s3 = new String("Chubb");
+		System.out.println("KP : Java Strings Immutable : Reference-Based 's3' : " + s3);
 
 		// Lottery
-		// lotteryCoupons(12);
+		//lotteryCoupons(12);
 		// lotteryCoupons(22);
 		// addDigits(3415);
 
