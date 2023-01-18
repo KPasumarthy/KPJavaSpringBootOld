@@ -18,6 +18,12 @@ public class KPJavaInterview {
 		String s3 = new String("Chubb");
 		System.out.println("KP : Java Strings Immutable : Reference-Based 's3' : " + s3);
 
+
+		////Java Data-Types int & Strings  : Immutable
+		System.out.println("KP : Java Data-Types int & Strings ' : " + 10 + 20);
+		System.out.println(10 + 20 + "KP : Java Data-Types int & Strings ' : " + 10 + 20);
+
+
 		// Lottery
 		//lotteryCoupons(12);
 		// lotteryCoupons(22);
