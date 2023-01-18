@@ -21,7 +21,8 @@ public class KPJavaInterview {
 
 		////Java Data-Types int & Strings  : Immutable
 		System.out.println("KP : Java Data-Types int & Strings ' : " + 10 + 20);
-		System.out.println(10 + 20 + "KP : Java Data-Types int & Strings ' : " + 10 + 20);
+		System.out.println(10 + 20 + "KP : Java Data-Types int & Strings ' : " + 10 + 20) ;
+		System.out.println(10 + 20 + "KP : Java Data-Types int & Strings ' : " + 10 + 20 + 'a' + "bcd") ;
 
 
 		// Lottery
