@@ -4,11 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
-
-import com.kpjavaspringboot.interview.KPJavaInterviewExamples;
-import com.kpjavaspringboot.model.City;
 
 @SpringBootApplication
 public class KPJavaSpringBootApplication {
@@ -29,14 +25,14 @@ public class KPJavaSpringBootApplication {
 
 		//KP : Interview Questions & Answers
 		//KPJavaInterviewExamples.getInterviewQuestions();
-		KPJavaInterviewExamples objKPJavaIntvwExp = new KPJavaInterviewExamples();
-		objKPJavaIntvwExp.getInterviewQuestions();
+		//KPJavaInterviewExamples objKPJavaIntvwExp = new KPJavaInterviewExamples();
+		//objKPJavaIntvwExp.getInterviewQuestions();
 
 		////KP : Master Card Interview Test
 
 		////Context Bean - Dependency Injection (DI) :  DI City Component
-		City city = context.getBean(City.class);
-		city.display();
+		//City city = context.getBean(City.class);
+		//city.display();
 	}
 
 }
