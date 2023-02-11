@@ -1,9 +1,9 @@
 # KPJavaSpringBoot
 KP : Java Spring Boot Application - REST APIs
 
-# Start Spring Boot Application from Terminal
-C:\Users\admin\IdeaProjects\KPJavaSpringBoot>java -cp "C:\Users\admin\IdeaProjects\KPJavaSpringBoot\target\KPJavaSpringBoot-0.0.1-SNAPSHOT.war" org.springframework.boot.lo
-ader.WarLauncher
+# Start Spring Boot Application from Terminal typing the following commands
+mvn clean install compile
+java -cp "C:\Users\admin\IdeaProjects\KPJavaSpringBoot\target\KPJavaSpringBoot-0.0.1-SNAPSHOT.war" org.springframework.boot.loader.WarLauncher
 
 # REST APIs
 https://localhost:8080/

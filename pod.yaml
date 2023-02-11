@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kpjavaspringboot
+  labels:
+    app: kpjavaspringboot
+spec:
+  containers:
+    - image: npeegtmregistry.azurecr.io/kpjavaspringboot-image:image.01.2023-tag
+      imagePullPolicy: IfNotPresent
+      name: kpjavaspringboot
+  restartPolicy: Always
+  nodeSelector:
+    kubernetes.io/os: linux
+  tolerations:
+    - operator: Exists

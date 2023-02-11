@@ -11,7 +11,7 @@
 	<name>KPJavaSpringBoot</name>
 	<description>Kailash Project for Spring Boot</description>
 
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
