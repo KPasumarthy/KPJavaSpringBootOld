@@ -8,6 +8,7 @@ class KpJavaSpringBootApplicationTests {
 
 	@Test
 	void contextLoads() {
+
 	}
 
 }
