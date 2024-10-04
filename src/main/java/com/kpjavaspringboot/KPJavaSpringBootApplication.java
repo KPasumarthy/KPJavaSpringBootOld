@@ -13,7 +13,6 @@ public class KPJavaSpringBootApplication {
 	private static Logger logger = LoggerFactory.getLogger(KPJavaSpringBootApplication.class);
 
 	public static void main(String[] args) {
-
 		////Spring Application Context
 		//SpringApplication.run(KPJavaSpringBootApplication.class, args);
 		ConfigurableApplicationContext context = SpringApplication.run(KPJavaSpringBootApplication.class, args);

@@ -9,20 +9,26 @@ public class KPJavaInterview {
 		// KP : Debug Print
 		System.out.println("KP : KPJavaInterview - com.kpjavaspringboot : main()");
 
-		////Java Strings  : Immutable
-		String s1 = "Scott";
-		String s2 = "Smith";
-		s1 = s1 + s2;
-		System.out.println("KP : Java Strings Immutable : Value-Based 's1' : " + s1);
+		System.out.println("KP : KPJavaInterview - com.kpjavaspringboot : main()");
+		KPTCSMinCoin kptcsMinCoin = new KPTCSMinCoin();
 
-		String s3 = new String("Chubb");
-		System.out.println("KP : Java Strings Immutable : Reference-Based 's3' : " + s3);
+		//kptcsMinCoin.minCoin();
 
 
-		////Java Data-Types int & Strings  : Immutable
-		System.out.println("KP : Java Data-Types int & Strings ' : " + 10 + 20);
-		System.out.println(10 + 20 + "KP : Java Data-Types int & Strings ' : " + 10 + 20) ;
-		System.out.println(10 + 20 + "KP : Java Data-Types int & Strings ' : " + 10 + 20 + 'a' + "bcd") ;
+		//		////Java Strings  : Immutable
+		//		String s1 = "Scott";
+		//		String s2 = "Smith";
+		//		s1 = s1 + s2;
+		//		System.out.println("KP : Java Strings Immutable : Value-Based 's1' : " + s1);
+		//
+		//		String s3 = new String("Chubb");
+		//		System.out.println("KP : Java Strings Immutable : Reference-Based 's3' : " + s3);
+		//
+		//
+		//		////Java Data-Types int & Strings  : Immutable
+		//		System.out.println("KP : Java Data-Types int & Strings ' : " + 10 + 20);
+		//		System.out.println(10 + 20 + "KP : Java Data-Types int & Strings ' : " + 10 + 20) ;
+		//		System.out.println(10 + 20 + "KP : Java Data-Types int & Strings ' : " + 10 + 20 + 'a' + "bcd") ;
 
 
 		// Lottery
