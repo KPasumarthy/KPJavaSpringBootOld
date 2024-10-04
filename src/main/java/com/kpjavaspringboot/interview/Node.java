@@ -8,7 +8,7 @@ public class Node {
         data = d;
         left = right = null;
 
-        System.out.println("KP : KPJavaInterview - com.kpjavaspringboot :  Binary Search Tree : Node : " + d);
+        System.out.println("KP : KPBinaryTree - com.kpjavaspringboot :  Binary Search Tree : Node : " + d);
 
     }
 }

@@ -5,7 +5,7 @@ public class KPBinaryTree {
     public static void main(String[] args) {
 
         // KP : Debug Print
-        System.out.println("KP : KPJavaInterview - com.kpjavaspringboot : main()");
+        System.out.println("KP : KPBinaryTree - com.kpjavaspringboot : main()");
 
         //someRecurisveFunction();
 
@@ -29,26 +29,26 @@ public class KPBinaryTree {
         ///Chase : Interview Implementation
         boolean flag = true;
         Node current = firstNode; //new Node("");
-        System.out.println("KP : KPJavaInterview - com.kpjavaspringboot :  Binary Search Tree : Print Left Node ");
-        System.out.println("KP : KPJavaInterview - com.kpjavaspringboot :  Binary Search Tree : Parent Node : " + current.data);
+        System.out.println("KP : KPBinaryTree - com.kpjavaspringboot :  Binary Search Tree : Print Left Node ");
+        System.out.println("KP : KPBinaryTree - com.kpjavaspringboot :  Binary Search Tree : Parent Node : " + current.data);
 
 
         do {
 
-            ////System.out.println("KP : KPJavaInterview - com.kpjavaspringboot  : Binary Search Tree : Current Node : " + current.data);
+            ////System.out.println("KP : KPBinaryTree - com.kpjavaspringboot  : Binary Search Tree : Current Node : " + current.data);
 
             if (current != null) {
 
                 if (current.left != null) {
                     int iLeftNodeId = current.left.data;
                     if (Integer.valueOf(iLeftNodeId) != 0)
-                        System.out.println("KP : KPJavaInterview - com.kpjavaspringboot :  Binary Search Tree : Left Node : " + current.left.data);
+                        System.out.println("KP : KPBinaryTree - com.kpjavaspringboot :  Binary Search Tree : Left Node : " + current.left.data);
 
                     current = current.left;
                 }
             }
             else{
-                System.out.println("KP : KPJavaInterview - com.kpjavaspringboot :  Binary Search Tree : Left Node : " + current.data);
+                System.out.println("KP : KPBinaryTree - com.kpjavaspringboot :  Binary Search Tree : Left Node : " + current.data);
                 flag = false;
             }
 
@@ -61,7 +61,7 @@ public class KPBinaryTree {
     static int recursiveCount = 0;
 
     static void someRecurisveFunction() {
-        System.out.println("KP : KPJavaInterview - com.kpjavaspringboot Recursion : recursiveCount " + recursiveCount++);
+        System.out.println("KP : KPBinaryTree - com.kpjavaspringboot Recursion : recursiveCount " + recursiveCount++);
 
         if (recursiveCount < 100) {
             someRecurisveFunction();

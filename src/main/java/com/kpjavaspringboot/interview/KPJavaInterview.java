@@ -10,7 +10,6 @@ public class KPJavaInterview {
 		System.out.println("KP : KPJavaInterview - com.kpjavaspringboot : main()");
 
 		System.out.println("KP : KPJavaInterview - com.kpjavaspringboot : main()");
-		KPTCSMinCoin kptcsMinCoin = new KPTCSMinCoin();
 
 		//kptcsMinCoin.minCoin();
 
